@@ -1,0 +1,331 @@
+.vm-salesPipeline{
+
+    & .vm-header{
+
+    
+        & .vm-month.vm-multi-select-dropdown.show .dropdown-toggle{
+            border: none !important;
+        }
+
+        & .vm-month{
+
+            & button{
+                padding-bottom: 0;
+                padding-top: .2rem;
+                padding-left: 0 !important;
+                height: 2.5rem;
+            }
+        }
+
+        & .nav{
+
+            & .nav-link{
+
+                & .vm-svg{
+                    fill: #87a2d2;
+                    width:1.8rem;
+                    height:1.9rem;
+                    transition: 0.2s all ease-in;
+                    
+                }
+
+                &.active{
+
+                    & .vm-svg{
+                        fill: $color-primary;
+                        
+                        
+                    }
+                    background: $color-teritary;
+                    border-radius: .5rem;
+                    padding: .8rem 1rem;
+                }
+            }
+        }
+
+
+    }
+
+    & .column{
+        // min-width: 30rem;
+        border-right: .1rem dashed darken($border-color,10%);
+        position: relative;
+        &:last-child{
+            &::after{
+                border-right:0 !important;  
+            } 
+        }
+        & header.vm-header{
+            padding: 0 1rem;
+        }
+
+        &::after{
+            content: '';
+            border-right: .1rem dashed $color-white;
+            position: absolute;
+            right: -.28rem;
+            top: 0;
+            height: 100%;
+        }
+
+
+        & .vm-list{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            
+            list-style-position: inside;
+            
+            & li{
+                color: darken($color-3, 30)!important
+               
+            }
+            & li:not(:first-child){
+                
+                padding-left: 1.8rem;
+
+                &::before{
+                    position: absolute;
+                    margin-left: -1.2rem;
+                    padding-right: 1em;
+                    color:$color-teritary;
+                    content: '\25CF';
+                }
+                
+                
+               
+            }
+        }
+
+        & .card{
+            
+            // margin: 1rem;
+            margin-bottom: 2rem;
+            // margin-left: 0.5rem;
+            // margin-right: 0.5rem;
+            cursor: grab;
+            border: none;
+            box-shadow:0px 2px 2px 0px rgba(0, 63, 179, 0.06), 0px 0px 4px 0px rgba(0, 63, 179, 0.1);
+            border-radius: 0;
+            &.vm-negotiating{
+                background: url(../img/due-task-pattern.png);
+                object-fit: cover;
+
+            }
+
+            & .vm-card-footer{
+                // background-color:darken($body-background-color, .6);
+                border-top: 1px solid $border-color !important;
+                border-bottom-left-radius: .5rem;
+                border-bottom-right-radius: .5rem;
+                & .vm-list-space{
+                    padding:.8rem 1rem 1rem !important;
+                    display: inline-block;
+                    &.dropdown-toggle{
+                        padding-left: 1.6rem !important;
+                        padding-right: 2rem !important;
+                        & img{
+                            position: relative;
+                            left:-.5rem;
+                        }
+                    }
+                }
+            
+               
+            } 
+
+            &:hover{
+                box-shadow: 0px 2px 5px 0px rgba(0, 63, 179, 0.1),
+                            0px 20px 15px 0px rgba(0, 63, 179, 0.05);
+            }
+              
+           
+              
+
+            & .vm-like{
+                position: absolute;
+                right: 0.5rem;
+                top: 0.5rem;
+
+                & .vm-svg{
+                    width: 1.8rem;
+                    height: 1.8rem;
+                 
+                }
+            }
+
+            & .vm-dislike{
+                position: absolute;
+                right: 0.5rem;
+                top: 0.5rem;
+
+                & .vm-svg{
+                    width: 1.8rem;
+                    height: 1.8rem;
+                   
+                    transform: rotate(180deg);
+                }
+            }
+
+            & .vm-break{
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 0 4.5rem 4.5rem 0;
+                border-color: transparent $color-warning transparent transparent;
+                position: absolute;
+                right:0;
+                top: 0;
+
+                & .vm-svg{
+                    width: 1.8rem;
+                    height: 1.8rem;
+                    position: relative;
+                    right: -23px;
+                    top: 3px;
+                    transform: rotate(180deg);
+                }
+            }
+
+            
+        }
+    }
+
+}
+
+.sales-pipeline-status{
+    position: fixed;
+    bottom: 0; 
+    width:100%;
+    padding-left:10rem;
+    padding-right:3rem;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    background: $color-white;
+    & .update{
+        text-align: center;
+        min-height:1rem;
+        border: .1rem dashed;
+        background: $body-background-color;
+        cursor: pointer;
+        & h2{
+            // color: black;
+            // -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+            // -webkit-text-stroke-width: 1px;
+            font-size: 3rem;
+            line-height: 9rem;
+        }
+       
+        &.won{
+            border-color: $color-secondary;
+            & h2{
+                color: $color-secondary;
+            }
+
+
+            &:hover{
+               background: lighten($color-secondary,20%);
+               & h2{
+                color: $color-white;
+               }
+            }
+            // & h2{
+            //     -webkit-text-stroke-color: $color-secondary;  
+            // }
+        }
+        &.recycle{
+            border-color: $color-primary;
+            & h2{
+                color: $color-primary;
+            }
+            &:hover{
+                background: lighten($color-primary,20%);
+                 & h2{
+                color: $color-white;
+               }
+             }
+            & h2{
+                -webkit-text-stroke-color: $color-primary;  
+            }
+        }
+        &.lost{
+            border-color: $color-danger;
+            & h2{
+                color: $color-danger;
+            }
+            &:hover{
+                background: lighten($color-danger,20%);
+                 & h2{
+                color: $color-white;
+               }
+             }
+            & h2{
+                -webkit-text-stroke-color: $color-danger !important;  
+            }
+        }
+    }
+
+
+    &::after{
+        content: '';
+        position: absolute;
+        background-color: transparent;
+        width: 100%;
+        height: 4rem;
+        z-index: 1000;
+        // overflow: hidden;
+        // height: 3rem;
+        // width: 100%;
+        // bottom: 0;
+        // left: 0;
+    }
+}
+
+
+.ui-state-active{
+    background-color: $color-teritary;
+  }
+  .column:before{
+    position: absolute;
+    content: "";
+    bottom: 0;
+    background-color: transparent;
+    pointer-events: none;
+    height: 145px;
+  }
+
+
+  .disable-scrollbars {
+    // max-height: calc(100vh - 240px);
+    // overflow: scroll;
+    // overflow-y: scroll !important;
+    // overflow-x: auto;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE 10+ */
+    &::-webkit-scrollbar {
+      width: 0px;
+      background: transparent; /* Chrome/Safari/Webkit */
+    }
+  }
+  .vm-sales-pipeline-drop{
+      & .dropdown-toggle {
+          height: inherit !important;
+          z-index: 1 !important;
+        //   &:after{
+        //       margin-top: .5rem;
+        //   }
+      }
+  }
+
+.won-hover{
+    background: lighten($color-secondary,20%) !important;   
+}
+.lost-hover{
+    background: lighten($color-danger,20%) !important;  
+
+}
+.recycle-hover{
+    background: lighten($color-primary,20%) !important;  
+}

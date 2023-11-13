@@ -1,0 +1,66 @@
+
+.vm-file-request-bg{
+  position: relative;  
+    &:before, &:after{
+        content: "";
+        position: fixed;
+    }
+    &:before{
+      background: url(../img/top-square.svg);
+      width:42.9rem ;
+      height: 26.6rem;
+      top: -.5rem;
+      right: 14rem;
+      z-index: -1;
+    }
+  &:after{
+    background: url(../img/left-square.svg);
+    width: 246px;
+    height: 626px;
+    left: 0;
+    top: 0;
+   }
+
+   & .vm-file-request-fill{
+       &:before{
+           content: "";
+            position: absolute;
+            height: 3px;
+            width: calc(55% + 5rem);
+            background: $color-primary;
+            bottom: 0;
+            left:5rem;
+            z-index: 1;
+       }
+       
+   }
+
+}
+.vm-file-request{
+    width: 80rem;
+    height: auto;
+    margin: 0 auto;
+    & .vm-text-light{
+        color: lighten($color-4, 35) !important;
+    }
+}
+.vm-file-request-enter-code-bg{
+    width: 60%;
+    height: auto;
+    // background: url(../img/enter-code-vector.svg);
+    // background-repeat: no-repeat;
+    // background-position: center center;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    & .vm-form-area{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -177px;
+        margin-top: -55px;
+        & .vm-label-text{
+            color: $color-white;
+        }
+    }
+}

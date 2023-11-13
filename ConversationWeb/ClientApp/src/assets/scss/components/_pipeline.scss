@@ -1,0 +1,76 @@
+.vm-pipeline{
+   &-count{
+       background: $color-teritary;
+       border:7px solid  lighten($border-color, 5);
+       border-radius: 1.5rem;
+     
+ 
+   }
+   &-count-list{
+    position: relative;
+    border-right: 2px solid $color-white;
+    padding: 2rem .5rem;
+    text-align: center;
+    cursor: pointer;
+    & label{
+        color:$color-4;
+    }
+    &:last-child{
+        border-right-color: transparent;
+        background: $color-danger;
+        border-top-right-radius: .7rem;
+        border-bottom-right-radius: .7rem;
+         & h2, & label{
+             color:$color-white;
+         }
+         &:before,&:after{
+             display: none;
+         }
+    }
+    &:nth-last-child(2){
+        &:before{
+            background: linear-gradient(90deg, #7797d3 60%, #e03f57 40%);
+        }
+    }
+    &:before,&:after{
+        content: "";
+        position: absolute;
+        right:-1rem;
+        width: 2rem;
+        height: 2rem;
+        background: $color-3;
+        border-radius: 50%;
+        top: 3rem;
+        z-index: 1;
+    }
+    &:after{
+        width: 1.4rem;
+        height: 1.4rem;
+        background:url('../img/pipeline-list-dot.svg');
+        margin-top: 0.5rem;
+        right: -.6rem;
+    }
+}
+    &-details{
+        margin-top: 3rem;
+       
+
+        & li{
+            width: 20%;
+            float: left;
+            padding: 2rem;
+            text-align: left;
+            
+
+            &:not(:last-child){
+                border-right: 1px solid $border-color;
+            }
+
+       
+
+        }
+
+    }
+
+
+}

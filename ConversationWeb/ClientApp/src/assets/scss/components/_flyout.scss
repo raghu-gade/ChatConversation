@@ -1,0 +1,351 @@
+  
+// Flyout Design //
+.vm-flyouts{
+    position: absolute;
+    top: 0;
+    // right: -60rem;
+    right: 0;
+    background-color:$flyout-bg;
+    box-shadow: -20px 0px 20px 0px rgba(51, 82, 140, 0.1);
+    transition: .3s; 
+    z-index: 999;
+    width: 0;
+    display: none; //Page breaking issues 
+    min-height: 100vh;
+    -webkit-animation: slide-in-right 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-right 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+    &.active{
+        width: 60rem;
+        // right:0;
+        display: block;
+        & .vm-flyout-min-height{
+            height: auto;
+            overflow:auto;
+        }  
+
+    }
+    
+    & .form-group{
+        margin-bottom: 1rem;
+    }
+    & .vm-contact-show{
+        & .form-group{
+            margin-bottom: 1rem; 
+        }
+    }
+    & .vm-flyout-form-separator{
+        border-bottom: 1px dashed darken($border-color, 4);
+        padding-bottom: 2.5rem;
+        position: relative;
+        &:before{
+            content: "";
+            width: 100%;
+            border-bottom: 1px dashed $color-white;
+            position: absolute;
+            bottom: -3px;
+            height: 1px;
+        }
+    }
+
+    // &.active{
+    //     right: 0;
+        
+    //   }
+      & h3{
+        color: $color-12;
+    }
+    & .vm-flyout-footer{
+       & .row{
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+    }
+     & .vm-flyout-header{
+       position: sticky;
+        padding: 2.2rem;
+        background: $color-primary;
+        z-index: 99;
+        width: 60rem;
+        top:0;
+        padding-left: 4rem;
+        // box-shadow:-13px -7px 9px 0px rgba(14, 91, 193, .17), -4px 0px 14px 0px rgba(22, 98, 197, .23);
+        // box-shadow: -13px -7px 9px 0px rgba(14, 91, 193, 0.17), -4px 0px 0px 0px rgba(22, 98, 197, 0.23); //13-12-2021 updated css here
+        border-left:.1rem solid darken($color-primary, 6%);
+        & .vm-flyout-close{
+            position: absolute;
+            left: -5px;
+            top: 9px;
+            cursor: pointer;
+            display: none;
+            transition: all .5s;
+        }
+       & h2{
+        color:$color-white;
+       }
+       
+       & .vm-profile-pic{
+           width:5rem;
+           height: 5rem;
+           background: $color-white;
+           display: inline-block;
+           position: absolute;
+           border-radius: 50%;
+           top:1rem;
+           text-align: center;
+           line-height: 4.4rem;
+           & label{
+               font-size: 1.8rem;
+               color: $color-white;
+               font-family: $font-primary;
+               margin-bottom: 0;
+               position: relative;
+    top: 2px;
+           }
+       }
+       & .vm-display-name{
+            padding-left:6rem;
+       }
+       & .vm-action-list{
+            position: absolute;
+            right: 3rem;
+            background: $color-white;
+            border-radius: 3rem;
+            top: 1.4rem;
+            transition: all .5s;
+           & li{
+            display: inline-block;
+            border-right: 1px solid $border-color;
+            &:last-child{
+                border-right: 0 !important;
+            }
+               & a{
+                   display: inline-block;
+                   padding: .8rem 1.4rem;
+                   
+                   & svg , & img{
+                       width: 18px;
+                       height: 18px;
+                       position: relative;
+                       top: -2px;
+                       
+                   }
+                   & img{
+                    top:-4px;
+                    &.vm-mail-icon, &.vm-video-call{
+                        width: 20px;
+                        height: 20px;
+                        top:-1px;
+                    }
+                   
+                    
+                 }
+               }
+           }
+       }
+    }
+
+    //  & .vm-flyout-footer{
+    //     position:sticky;
+    //     bottom: 1rem;
+    //     background-color:$flyout-bg;
+    //     border-top:1px solid $border-color;
+    //     z-index: 99;
+    //     right: 0;
+    //     transition: all .5s;
+    //     &:before{
+    //         content: "";
+    //         width: 100%;
+    //         height: 1rem;
+    //         bottom: -1rem;
+    //         position: absolute;
+    //         background-color:$flyout-bg;
+    //     }
+    // }
+    & .vm-info-panel{
+        & label{
+            span{
+                &.vm-label-text{
+                    width: 15rem;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+    & .form-control{
+        background: $color-white !important;
+        border-radius: .5rem;
+    }
+}
+ 
+  
+
+
+
+  .vm-add-activity-detail-view, .vm-contact-view{
+      display: none;
+      //border-left:1px solid $border-color;
+      box-shadow: -3px 0px 2px 0px rgba(38, 132, 254, 0.04),-30px 0px 30px 0px rgba(38, 132, 254, 0.07);
+     
+          &.vm-company-view{
+           
+            &:before{
+                height: 100%;
+            }  
+          }
+      
+          .vm-border-left {
+              border-left: 0.1rem solid darken($border-color, 6%);
+          }
+      }
+     
+     
+
+
+.vm-phone-rotate{
+    transform: rotate(260deg);
+}
+
+
+.vm-add-activity-flyout{
+    & .vm-autocomplete-box{
+        width: 150%;
+        background: $color-white;
+        box-shadow: 0px 30px 20px 0px rgba(54, 46, 203, 0.15);
+        position: relative;
+        top: 4px;
+
+        & .vm-autocomplete-box-dropdown{
+            position: absolute;
+            z-index: 9;
+            width: 100%;
+            top: -.4rem;
+        }
+        & .list-group{
+            border-color: transparent;
+            padding-bottom: 4.8rem;
+            & .list-group-item{
+                border-bottom:1px dashed darken($border-color, 4);
+              
+                &.vm-select-createnew{
+                    background:$color-teritary;
+                    // Developer Changes //
+                    position: absolute;
+                    bottom: 0px;
+                    width: calc(100% - .2rem);
+                    border-bottom: 1px solid $color-white;
+                    // Developer Changes //
+                    & img{
+                        position: relative;
+                        top: -3px;
+                    }
+                }
+            }
+        }
+    }
+    & .add-activity-name-select, & .add-activity-company-select{
+        background: darken($color-teritary, 5%);
+        padding: .7rem 1.5rem;
+        border-radius: 3rem;
+        display: inline-block;
+        margin: .5rem;
+        & .vm-close{
+            position: relative;
+            top:-2px;
+        }
+    }
+    &.vm-dual-activity{
+        width: 120rem;
+        & .vm-add-activity-detail-view{
+            display: block;
+        }
+    }
+    & .vm-single-column{
+        width:50% !important;
+        float: left;
+    }
+    .vm-dual-column{
+        display: block !important;
+        float: left;
+    }
+    
+    & .vm-add-activity-detail-view{
+          display: none;
+          & .vm-flyout-close{
+              left:-0.4rem;
+          }
+        //   border-left:1px solid $border-color;
+          & .vm-single-column{
+              width: 100% !important;
+          }
+         
+        }
+     
+     
+     
+}
+.vm-flyout-footer{
+    border-top: 1px dashed darken($border-color, 4);
+    position: relative;
+    padding-bottom: 2rem;
+    &:before{
+        content: "";
+        width: 100%;
+        border-bottom: 1px dashed $color-white;
+        position: absolute;
+        top:1px;
+        height: 1px;
+    }
+    .vm-flyout-close{
+        position: relative;
+        left:50% !important;
+    }
+}
+.vm-timeline-flyout{
+    & .dropdown-toggle{
+        width: 8rem !important;
+        top: 0 !important;
+        left: .6rem !important;
+        font-size: 1.8rem !important;
+        font-family: "SegoeUISemibold";
+    }
+}
+.show-call-details, .show-task-details {
+    display: none;
+}
+.vm-call-receive-contact-flyout{
+    top:15.1rem;
+    position: fixed;
+    & .vm-flyout-header{
+        position: relative;
+        & .vm-flyout-close{
+            display: block;
+        }
+    }
+}
+
+.vm-add-opportunity-flyout{
+    &.vm-dual-activity{
+        width: 120rem;
+    }
+    & .vm-single-column{
+        width: 50% !important;
+        float: left;
+    }
+    & .vm-add-opportunity-quote{
+        display: none;
+        box-shadow: -3px 0px 2px 0px rgba(38, 132, 254, 0.04),-30px 0px 30px 0px rgba(38, 132, 254, 0.07);
+
+    }
+}
+.add-activity-company-select{
+    background: darken($color-teritary, 5%);
+    padding: .7rem 1.5rem;
+    border-radius: 3rem;
+    display: inline-block;
+    margin: .5rem;
+    & .vm-close{
+        position: relative;
+        top:-2px;
+    }
+}

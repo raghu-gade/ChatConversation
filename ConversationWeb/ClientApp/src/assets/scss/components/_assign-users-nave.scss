@@ -1,0 +1,22 @@
+.vm-assign-users-nave  {
+    margin: 0;
+
+          &  ul {
+              display: inline-block;
+
+           & li {
+                display: inline-block;
+                margin-right: 15px;
+                margin-bottom: 15px;
+                & a {
+                    padding: 10px 15px;
+                    background-color:$color-2;
+                    border-radius: 3rem;
+                    color: #000;
+                    display: block;
+                }
+
+               }
+           }
+    
+}

@@ -1,0 +1,179 @@
+.vm-dashboard-activity-board{
+    & .vm-activity-bg{
+        background: $body-background-color;        
+    }
+    & .vm-activity-day-separator{
+        padding-bottom: 3rem;
+        position: relative;
+        &::before, &::after{
+            content: "";
+            border-bottom: 1px dashed darken($body-background-color, 8);
+            position: absolute;
+            width: calc(100% + 18px);
+            bottom: 1.5rem;
+            left: -.9rem;
+        }
+       
+        &::after{
+            border-bottom: 1px solid $color-white;
+            bottom: 1.4rem;
+        }
+    }
+    & .vm-list-tab{
+        // box-shadow: 0px 2px 2px 0px rgba(165, 129, 225, 0.1);
+        border: 1px solid $border-color;
+        border-radius:2rem;
+        & li{
+        
+            & a{
+                padding:.85rem 1.2rem;
+                display: block;
+                border-right:1px solid $border-color;
+                color: $color-1;
+                &.active{
+                    background: $color-primary;
+                    color: $color-white;
+                 
+                }
+            }
+            &:first-child{
+                & .active{
+                    border-top-left-radius: 2rem;
+                    border-bottom-left-radius: 2rem;
+                }
+            }
+            &:last-child{
+                & a{
+                    border-right:0;
+                }
+                & .active{
+                    border-top-right-radius: .5rem;
+                    border-bottom-right-radius: .5rem;
+                }
+            }
+            .vm-multi-select-dropdown{
+                &.show{
+                    & .dropdown-toggle{
+                        border:0 !important;
+                    }
+                    & .dropdown-menu{
+                        top:0rem !important;
+                        z-index: 999;
+                    }
+                }
+                & .dropdown-toggle{
+                    box-shadow: none;
+                    padding-left:1rem;
+                    border:0;
+                    border-top-right-radius: 2rem;
+                    border-bottom-right-radius: 2rem;
+                    &:after{
+                        top:2rem;
+                    }
+                }
+            }
+           
+        }
+    }
+    .vm-activity-board-list{
+        cursor: pointer;
+        transition: all .5s;
+        &.vm-over-due{
+            & .vm-round{
+                width: .5rem;
+                height: .5rem;
+                background: $color-danger;
+                border-radius: 50%;
+                display: inline-block;
+                position: relative;
+                top:-2px;
+            }
+        }
+        & .media{
+          box-shadow:0px 2px 2px rgba(171, 171, 184, 0.24), 0px 0px 5px rgba(171, 171, 184, 0.2) !important;        }
+        
+        &.vm-due-task{
+            background:url('../img/due-task-pattern.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        & .vm-activity-complete-icon{
+            display: none;
+            transition: all .4s;
+        }
+        & .vm-activity-complete-icon{
+            position: absolute;
+            top: 1.4rem;
+            left: 3.6rem;
+        }
+        & .vm-separator{
+            background:url('../img/activity-day-separator.svg');
+            // background-repeat: no-repeat;
+            // background-size: cover;
+            height: 1.3rem;
+        }
+        & .vm-activity-name-separator{
+            position: relative;
+            & .dot{
+                width: .8rem;
+                height: .8rem;
+                background: $color-white;
+                border:.2rem solid $color-primary;
+                display: inline-block;
+                border-radius: 50%;
+                position: relative;
+                top: -.1rem;
+            }
+            & .vm-activity-name{
+                border-bottom: 1px dotted transparent;
+                transition: all .5s;
+                &:hover{
+                    border-color:$color-12;  
+                }
+            }
+          
+            
+        }
+    }
+    .vm-activity-board-complete{
+        
+        & .vm-activity-complete-icon{
+            display: block !important;
+        }
+       
+        & p, & a, & .vm-text-dark, & label {
+            color:lighten($color-1, 65%) !important;
+        }
+        & .vm-activity-image{
+            filter: grayscale(100%);
+            opacity: .5;
+        }
+        & svg{
+            &.vm-svg-icon{
+                & path{
+                    fill: lighten($color-1, 35) !important;
+                }
+            }
+           
+        }
+        & .dot{
+            border-color:lighten($color-1, 65%) !important;
+        }
+        & .vm-activity-name{
+            &:hover{
+                border-color:lighten($color-1, 65%) !important; 
+            }
+        }
+
+    }
+    & .vm-due-task{
+        background:url('../img/due-task-pattern.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    & .vm-separator{
+        background:url('../img/activity-day-separator.svg');
+        height: 1.6rem;
+    }
+ 
+}

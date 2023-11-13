@@ -1,0 +1,79 @@
+
+
+.vm-mini-wizard {
+    text-align: center;
+    ul {
+        padding: 0rem 1rem 2rem 1rem;
+        li {
+           
+            &.current {
+
+               a {
+                   background-color: $color-secondary;
+                   box-shadow: 0 0.5rem 0.5rem 0 rgba(73, 134, 61, 0.2);
+                    span {
+                        color:$color-secondary; 
+                        font-size: 2.2rem;
+                        font-family:$font-primary-bold;
+                         margin: 0;}
+                }
+
+               
+            }
+                position: relative;
+                padding: 5px;
+                display: inline-block;
+                &::after {
+                content: "";
+               width: 100%;
+               height: 1px;
+               background-color: $color-primary;
+               position: absolute;
+               top: 50%;
+               transform: translateY(-50%);
+           }
+           &:last-child::after {display: none;}
+           
+            a {
+                display: inline-block; 
+                position:relative; 
+                width: 10px; 
+                height: 10px;
+                background-color:$color-primary; 
+                border-radius:100%;
+                color: $color-3;
+                font-size: 1.2rem;
+                font-family: $font-primary-bold;
+                box-shadow: 0 0.5rem 0.5rem 0 rgba(38, 132, 254, 0.2);
+                span {
+                position: absolute;
+               top: 100%;
+               left: 0;
+               right: 0; 
+               text-align: center;
+                margin-top: 0.5rem;
+               
+               }
+           }
+
+
+           &.current {
+            &:after {
+               
+                background: linear-gradient(to left, $color-primary, $color-secondary);
+                }
+
+           }
+           &.complete {
+               a {
+                   background-color: $color-secondary;
+                   color: $color-secondary;
+               }
+               &:after {
+               
+               background-color: $color-secondary   ;
+               }
+           }
+        }
+    }
+}

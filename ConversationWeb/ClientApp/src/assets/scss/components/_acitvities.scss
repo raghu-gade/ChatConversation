@@ -1,0 +1,620 @@
+.vm-activities-slide-bg{
+    background: $color-teritary;
+    border:1px solid darken($color-teritary, 6) ;
+}
+.vm-activities-slide{
+    & .owl-item{
+        text-align: center;
+    }
+    & .vm-date{
+        color: $form-text-color;
+        & .active{
+            width: 2.4rem;
+            height: 2.4rem;
+            background:$color-primary;
+            border-radius: 100%;
+            display: inline-block;
+            text-align: center;
+            line-height: 2.4rem;
+        }
+    }
+    & .owl-nav{
+        // position:relative;
+        margin-top: 0;
+        & .owl-prev, & .owl-next{
+            width: 2.4rem;
+            height: 2.4rem;
+            // background-color: darken($color-teritary, 4);
+            background: darken(desaturate($color-teritary, 35.48), 7.06);
+            border-radius: 100%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0;
+            box-shadow: inset -1.2px -1.2px 0px 0px rgb(255 255 255), inset 1.2px 1.2px 0px 0px rgb(148 165 198 / 59%); 
+            &:hover{
+                background-color: darken($color-teritary, 4);
+            }
+        }
+        & .owl-prev{
+            left:.3rem;
+            &::before{
+                background:url('../img/calendar-left-arrow.svg') no-repeat;
+                left:1rem;
+            }
+        }
+        & .owl-next{
+            right:0.3rem;
+            &::before{
+                background:url('../img/calendar-right-arrow.svg') no-repeat;
+                right: .9rem;
+            }
+        }
+        & .owl-prev, & .owl-next{
+                width: 2.8rem;
+                height: 2.8rem;
+                margin: 0;
+                &::before{
+                    content: "";
+                    position: absolute;
+                    top: .9rem;
+                    width: 0.8rem;
+                    height: 1.4rem;
+                }
+        }
+      
+    } 
+}
+.vm-week-activity-value{
+    width: calc(100% + 20px);
+    padding-left: 4rem;
+    margin-left: -1rem !important;
+}
+// 
+.vm-activities{
+    border: .1rem dashed darken(desaturate(adjust-hue($color-teritary, -1), 23.81), 11.37);
+    & .vm-border-bottom{
+        border-bottom:  0.1rem dashed #dfe5f3;
+    }
+    & .vm-col-active-bg{
+        background-color: rgba($color-teritary, 0.5);
+    }
+  & .vm-week-current-state{
+      position: relative;
+      &::before{
+          content: "";
+          width: 100%;
+          height: 1px;
+          border-bottom: 1px dashed lighten($color-danger, 22);
+          position:absolute;
+          top:3.8rem;
+        }
+      & .vm-active-line{
+          position: absolute;
+          width: 100%;
+          height: 1px;
+          background-color:$color-danger;
+          top:3.8rem;
+          left: 0;
+          z-index: 1;
+          &::before, &::after{
+            content: "";
+            width: .8rem;
+            height: .8rem;
+            border-radius: 100%;
+            background-color:$color-danger;
+            position: absolute;
+            top: -0.4rem;
+          }
+          &::after{
+              right: -.4rem !important;
+          }
+          &::before{
+              left: -.4rem;
+          }
+      }
+  }
+    & .dropdown-toggle{
+        border-color: transparent !important;
+        padding: 0 !important;
+        width: 0.6rem !important;
+        background: transparent !important;
+        height: auto !important;
+        &::after{
+            display: none;
+        }
+        &:focus{
+            outline: 0;
+        }
+    }
+    .vm-emty-row{
+        height: 6rem;
+        // align-items: center !important;
+    }
+    .vm-time-display{
+        position: absolute;
+        left: -4.8rem;
+        top: -2.6rem;
+        & .vm-font-size-12{
+            font-size: 1rem !important;
+        }
+    }
+}
+.vm-week-activity{
+    & .vm-time-display{
+        top: -1.6rem;
+    }
+}
+.vm-due-task{
+    background:url('../img/activities-pattern.png') $color-white;
+    box-shadow: 0px 1px 2px 0px rgba(54, 54, 69, 0.2);
+    border-top:.1rem solid $color-white;
+} 
+.vm-task-over-due{
+    border-left:2px solid $color-danger;
+}
+.vm-task-completed{
+    border-left:2px solid $color-success;
+}
+.vm-task-warning{
+    border-left:2px solid $color-warning;
+    
+}
+.vm-current-state{
+    position: relative;
+    z-index: 9;
+    & .vm-time-display{
+        top:.4rem;
+    }
+    & .vm-current-time-line{
+        border-bottom: 1px solid $color-danger;
+        top:-2.5rem;
+    &::before{
+        content: "";
+        width: .8rem;
+        height: .8rem;
+        border-radius: 100%;
+        background-color: $color-danger;
+        position: absolute;
+        left: -.5rem;
+        top:-.4rem;
+    }
+    &::after{
+        content: "";
+        width: .8rem;
+        height: .8rem;
+        border-radius: 100%;
+        background-color: $color-danger;
+        position: absolute;
+        right: -.5rem;
+        top:-.4rem;
+    }
+    }
+}
+
+table.vm-due-task-grid, table.vm-task-self-grid{
+    & tr.vm-due-task, & tr.vm-task-self{
+        & td{
+            padding-right: 5rem;
+            font-size: 1.2rem;
+            &:last-child{
+                padding-right: 1rem;
+            }
+            &:first-child{
+                padding-left: 1rem;
+            }
+            & .vm-divider{
+                position: relative;
+                &::before{
+                    content: "";
+                    width: .1rem;
+                    height: calc(100% + .9rem);
+                    background: $border-color;
+                    left: -.5rem;
+                    position: absolute;
+                    top: -0.4rem;
+
+                }
+            }
+            & .vm-small-divider{
+                position: relative;
+                &::before{
+                    content: "";
+                    width: .1rem;
+                    height: calc(100% + .6rem);
+                    background: $border-color;
+                    left: -.5rem;
+                    position: absolute;
+                    top: -0.3rem;
+                }
+            }
+        }
+    }
+  
+}
+.vm-day-activity{
+    & .vm-task-self{
+    border-top:1px solid $color-white;
+    }
+}
+.vm-task-self{
+    box-shadow: 0px 1px 2px 0px rgb(54 54 69 / 20%);
+    // border-top:1px solid $color-white;
+}
+.vm-bdr-bottom-light-dots{
+    border-bottom: .1rem dashed darken(desaturate(adjust-hue($color-teritary, -1), 23.81), 11.37);
+}
+.vm-bdr-bottom-dark-dots{
+    border-bottom: .1rem dashed darken(desaturate(adjust-hue($color-teritary, -1), 23.81), 11.37);
+}
+.vm-bdr-right-dark-dots{
+    border-right: .1rem dashed darken(desaturate(adjust-hue($color-teritary, -1), 23.81), 11.37);
+}
+.vm-bdr-bottom-ex-light-dots{
+    border-bottom: 1px dashed #e3eafa;
+}
+.vm-line-height-1{
+    line-height: 1;
+}
+// Activity Month CSS //
+.vm-month-activity-day{
+    min-height: 10rem;
+    height: auto;
+    & .vm-text-light{
+        color:$color-12;
+        opacity: 30%;
+        font-size: 1.2rem;
+        font-family:$font-primary;
+        &.vm-font-size-14{
+            font-size: 1.4rem !important;
+        }
+        &.vm-text-extra-light{
+            color:$color-12;
+            opacity: 70%;
+        }
+    }
+   
+    & .active{
+        width: 2.4rem;
+        height: 2.4rem;
+        background:$color-primary;
+        border-radius: 100%;
+        color:$color-white;
+        line-height: 2.4rem;
+        opacity: inherit;
+    }
+}
+.vm-filter-grayscale{
+    filter: grayscale(100%);
+    opacity: 0.5;
+}
+
+.vm-video-call-bg{
+    // 13-12-2021 css updated start here 
+    // background: $color-1;
+    background:darken(saturate($color-1, 0.81), 6.08);
+    // 13-12-2021 css updated end here 
+}
+.vm-video-large-window{
+    padding-bottom: 20rem;
+     //15-12-2021 css updated start here 
+    .vm-video-call-card {
+       
+        &.vm-height-210{
+            @include vm-breakpoint(xl-min-1600){
+                height: 40rem; 
+              
+    
+            } 
+        }
+        img{
+            @include vm-breakpoint(xl-min-1600){
+                height: 40rem; 
+              
+    
+            }  
+        }
+        
+    } 
+     //15-12-2021 css updated end here 
+}
+.vm-video-call-card-light-bg{
+    // 13-12-2021 css updated start here 
+    // background:lighten($color-1, 5) !important;
+    background: #2e2e3e !important;
+   // 13-12-2021 css updated end here   
+
+}
+.vm-video-call-side{
+    margin: 0 7rem;
+    // 13-12-2021 css updated start here 
+.owl-stage-outer{
+    .owl-stage {
+ display: flex;
+    align-items: center;
+    }
+   
+}
+// 13-12-2021 css updated end here 
+    & .owl-nav{
+        // position:relative; //15-12-2021 css updated here
+        margin-top: 0;
+        & .owl-prev, & .owl-next{
+            width: 4rem;
+            height: 4rem;
+            border-radius: 100%;
+            position: absolute;
+            top:50%; //15-12-2021 css updated here
+            transform: translateY(-50%); //15-12-2021 css updated here
+            font-size: 0;
+            background: darken($color-1, 1%); //13-12-2021 css updated here 
+            box-shadow:inset 1px 1px 2px 0px rgb(255 255 255 / 16%), inset -1px -1px 1px 0px rgb(6 2 2 / 89%); //13-12-2021 css updated here 
+          
+            align-items: center!important;
+            justify-content: center!important;
+            display: flex;
+            &:hover{
+                background: transparent;
+            }
+            &::before{
+                content: "";
+                width: 1rem;
+                height: 1.2rem;
+            }
+        }
+        & .owl-prev{
+            left:-6rem;
+            &::before{
+                background:url('../img/arrow-left.svg') no-repeat;
+            }
+        }
+        & .owl-next{
+            right:-6rem;
+            &::before{
+                background:url('../img/arrow-right.svg') no-repeat;
+                right: -3px;
+                position: relative;
+            
+            }
+        }
+    } 
+}
+
+.vm-video-call-card{
+    background: $color-1;
+    min-height: 8.9rem; //13-12-2021 css updated here 
+
+    background: $color-1;
+    //13-12-2021 css updated start here 
+    img {
+        object-fit: cover; //15-12-2021 css updated start here 
+        @include vm-breakpoint(xl-min-1600){
+            height: 18rem; 
+           //15-12-2021 css updated start here 
+
+        }
+    }
+     //13-12-2021 css updated end here 
+    & .vm-sm-profile-pic{
+        width: 3.2rem; //13-12-2021 css updated here
+        height: 3.2rem; //13-12-2021 css updated here
+        border-radius: 100%;
+        color: $color-white;
+        margin-top: -2.5rem; //13-12-2021 css updated here
+        &.big {
+            width: 6.4rem; //13-12-2021 css updated here
+            height: 6.4rem; //13-12-2021 css updated here 
+            margin-top: 0;   //13-12-2021 css updated here
+        }
+        & img{
+            border-radius: 100%;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &.active{
+        // border:2px solid $color-primary; //13-12-2021 css updated here 
+        &::after{
+            content: ''; 
+             border:2px solid $color-primary; //13-12-2021 css updated here 
+             position: absolute;
+            width: 100%;
+             height: 100%;
+            top: 0;
+        }
+    }
+    & .vm-card-title{
+        bottom: 0.5rem; //13-12-2021 css updated here 
+        color:$color-white;
+        background-color:rgba($color-1, .5);
+        position: absolute;
+        border-radius: .5rem;
+        left: 1rem;
+        font-size: 1.2rem; //13-12-2021 css updated here 
+        & .vm-audio-icon{
+            width: .8rem;
+            height: 1.3rem;
+            display: inline-block;
+            cursor: pointer;
+            position: relative;
+            top:-.2rem;
+      
+        }
+      
+       
+    }
+    & .vm-video-partner{
+        position: absolute;
+        bottom: 0;
+        right:0;
+        width: 17rem;
+        height: 8.5rem;
+        box-shadow: inset 0px 0px 10px 20px white;
+
+    }
+}
+.vm-top-116{
+    top:11.6rem !important;
+}
+.vm-height-210{
+    height: 21rem;
+    //13-12-2021 css updated start here 
+    @include vm-breakpoint(xl-min-1600){
+        height: 18rem; 
+    }
+    //13-12-2021 css end updated here 
+}
+.vm-height-400{
+   //13-12-2021 css updated start here 
+   @include vm-breakpoint(xl-min-1600){
+    height: 18rem; 
+}  
+}
+
+.vm-call-end-button, .vm-audio-button{
+    width: 4.6rem;
+    height: 4.6rem;
+    align-items: center!important;
+    justify-content: center!important;
+    display: inline-flex;
+    border-radius: 100%;
+}
+.vm-call-end-button{
+    background: #fc8686;
+    box-shadow: 0px 5px 5px 0px rgb(251 73 98 / 20%);
+}
+.vm-audio-button{
+    // 13-12-2021 css update start here 
+    // background:lighten($color-1, 5) !important;
+    border: solid 0.1rem #3C6EC7;
+     &.modelone {
+       
+        
+        .vm-mick-active {
+display: none;
+        }
+         
+         &.active {
+             background-color: #247beb;
+            box-shadow:inset -1px -1px 1px 0px rgb(255 255 255 / 30%), inset 1px 1px 1px 0px rgb(28 94 180 / 60%);
+            border: 0;
+             .vm-mick-active {
+                display:block;
+                        }
+                        .vm-mick-in-active {
+                            display:none;
+                        }
+         }
+     }
+     
+   
+     // 13-12-2021 css update end here 
+}
+.vm-video-call-popup-window{
+    width: 32rem;
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    // updated css start here 13-12-2021
+    @include vm-breakpoint(xl-min-1600){
+        width: 60rem;
+    }
+    // updated css end here 13-12-2021
+    // & .vm-video-call-card {
+    //     & .vm-sm-profile-pic{
+    //         width: 9.5rem !important;
+    //         height: 7rem !important;
+    //     }
+    // }
+    & .vm-video-call-card {
+       & .vm-video-partner{
+        width: 9.5rem !important;
+        height: 7rem !important;
+        bottom: 1.5rem;
+        // updated css start here 13-12-2021
+        img {
+            @include vm-breakpoint(xl-min-1600){
+                height:auto; 
+            }  
+        }
+        // updated css end here 13-12-2021
+       } 
+    }
+    
+}
+.vm-all-participants{
+    width: 42rem !important;
+    & .vm-profile-pic{
+        // updated css start here 13-12-2021
+        width: 3.2rem;
+        height: 3.2rem;
+         // updated css end here 13-12-2021
+        align-items: center!important;
+        justify-content: center!important;
+        display: inline-flex;
+        border-radius: 100%;
+        color: $color-white;
+    }
+}
+.vm-line-height-1{
+    line-height: 1;
+}
+.vm-opacity-half{
+    opacity: .5;
+}
+
+.nag{
+    position: relative;
+    &:hover{
+        & .vm-task-expand{
+            display: block;
+        }
+    }
+    & .vm-task-expand{
+        position:absolute;
+        right: -31.8rem;
+        width: 31rem;
+        background:$color-white;
+        display: none;
+        z-index: 9;
+        margin-top: -10.6rem;
+        box-shadow: 12.586px 15.543px 30px 0px rgba(127, 136, 151, 0.25);
+        & .vm-task-expand-arrow{
+            position: absolute;
+            width: 0.5rem;
+            height: 1rem;
+            left: -5px;
+            top: 50%;
+            z-index: 9;
+            transform: translateY(50%);
+            margin-top: -0.5rem;
+            &::before,
+            &::after {
+              position: absolute;
+              display: block;
+              content: "";
+              border-color: transparent;
+              border-style: solid;
+            }
+            &::before{
+                left: 0;
+                border-width: 0.5rem 0.5rem 0.5rem 0;
+                border-right-color:darken(desaturate(adjust-hue($color-teritary, -1), 23.81), 11.37);
+            }
+            &::after{
+                left: 1px;
+                border-width: 0.5rem 0.5rem 0.5rem 0;
+                border-right-color:$color-white;
+            }
+
+           }
+        & .vm-task-expand-card{
+            border-radius: 0;
+            border:.1rem solid darken(desaturate(adjust-hue($color-teritary, -1), 23.81), 11.37);
+        }
+    }
+    
+}
+.vm-top-n30{
+    top:-3rem;
+}

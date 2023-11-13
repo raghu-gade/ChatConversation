@@ -1,0 +1,249 @@
+.vm-left-card{
+    background: $color-teritary !important;
+    border:1px solid darken($color-teritary, 4);
+    border-radius: 1rem;
+}
+.vm-left-card-accordion {
+    background: $color-teritary;
+    .card {
+        border-left: none;
+        border-right: none;
+        border-radius: 5px;
+        border-top:0.1rem solid darken($color-teritary, 5.3);
+        background: transparent !important;
+        
+        &:first-of-type {
+            border-top: none;
+        }
+        &:last-of-type {
+            border-bottom: none;
+        }
+        .card-header {
+            background-color: transparent;
+            padding-left: 2.5rem;
+            padding-right: 0rem;
+            border-bottom: none;
+            .btn-link {
+                font-family: $font-primary-bold;
+                color: $color-1;
+                text-decoration: none;
+                padding-left: 0rem;
+                .accordion-arrow {
+                    transform: rotate(90deg);
+                    transition: transform 0.4s ease-in;
+                }
+
+                span {
+                    padding-left: 0.3rem;
+                }
+
+                &.collapsed {
+                    font-family: $font-primary;
+                    color: $link-color;
+                    .accordion-arrow {
+                        transform: rotate(0deg);
+
+                    }
+                }
+            }
+        }
+
+        .card-body {
+            padding: 0px;
+            padding-bottom: 1rem;
+            
+          .list-group {
+                .list-group-item {
+                    border: none;
+                    padding: 0px;
+                    margin:0rem 0rem;
+                    background: transparent !important;
+                    &:before {
+                        width: 0.5rem;
+                        height:100%;
+                        content: '';
+                        background-color: $color-primary;
+                        position: absolute;
+                        left: -0.5rem;
+                        bottom: 0;
+                        
+                         transition: all 0.3s ease-in-out;
+                    }
+                    &:first-child {
+                        margin-top: 0rem;
+                    }
+                    &.active {
+                        background-color: $color-white;
+                        &:before {
+                           visibility: visible;
+                            height: 100%;
+                            left: 0;
+                            
+                        }
+
+ 
+
+                        a {
+                            color:$color-4;
+                        }
+
+ 
+
+                    }
+
+                    &:hover {
+                        
+                        &:before {
+                            left: 0rem;
+                        }
+
+ 
+
+                        a {
+                            color: darken($color-3, 8%);
+                        }
+
+                    }
+ 
+                    a {
+                        padding: 0.6rem 2.5rem 0.6rem 4.8rem;
+                        display: block;
+                    }
+                }
+            }
+
+            
+
+         
+        }
+    }
+}
+
+
+.vm-border-accordion {
+    .card {
+        margin-bottom: 1.5rem;
+        border:0.1rem solid $border-color !important;
+        border-radius: 0.5rem  !important;
+        overflow: inherit;
+        &:last-of-type {
+            margin:0rem;
+        }
+    }
+
+    .card-header {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        background-color: $color-teritary !important;   
+        border-bottom:0.1rem solid darken($color-teritary, 2) !important;
+        margin-bottom: 0rem !important;
+        padding-left: 2rem;
+        padding-right: .4rem;
+        h2 {
+            width: 100%;
+            .btn {
+                display: flex;
+                align-items: center;
+                padding-right: 0.5rem;
+                svg {
+                    margin-right: 0.5rem;
+                }
+            }
+        }
+
+
+        .btn-link {
+            font-family: $font-primary-bold;
+            color: $color-12;
+            text-decoration: none;
+            padding-left: 0rem;
+            .accordion-arrow {
+                transform: rotate(90deg);
+                transition: transform 0.4s ease-in;
+            }
+
+           
+        }
+
+ 
+        &.collapsed {
+            height: 50px;
+            background-color: $color-white !important;
+            margin-bottom: -0.1rem !important;
+           
+             
+            .accordion-arrow {
+                transform: rotate(0deg);
+            }
+            .vm-li-actions {
+                display: none;
+            }
+
+        }
+    }
+
+    .card-body {
+        // background-color: lighten($color-teritary, 1%);
+        background-color: $color-teritary !important;
+        padding: 0rem;
+
+        ul {
+          
+                li {
+                    padding: 1rem 2rem 1rem 2.5rem;
+                    border-bottom:0.1rem solid $border-color;
+                    color: darken($color-primary, 40%);
+                    display: flex;
+                    align-items: center;
+                    &:nth-child(even) {
+                        background-color: lighten($color-teritary, 2%);
+                    }
+        
+                    .icon-drag {
+                        margin-right: 0.5rem;
+                    }
+
+                    &:last-child {
+                        border-bottom:none !important;
+                    }
+
+                   
+             
+                
+            }
+        }
+    }
+
+
+    .vm-li-actions {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        span {
+            padding-left: 0.8rem;
+            color: $color-12;
+            font-size: 1.4rem;
+            font-family: $font-primary;
+        }
+    }
+}
+
+.vm-accordin-bg  {
+    & .vm-border-accordion {
+          .table-responsive{
+              .table {
+                  td {
+                    border-top: 0.1rem solid #cadcff !important;
+                  }
+              }
+          }
+        & .card-header  { background-color:$color-teritary !important;
+           &.collapsed{
+                background-color:#fff !important;
+            }
+           
+        }
+    }
+ 
+}

@@ -1,0 +1,212 @@
+.vm-table-action {
+  .dropdown {
+    &.dropdown-with-icons {
+      .vm-dropDownicons {
+        //background: #f00;
+        // width: 2rem;
+        // height: 2rem;
+        // float: left;
+        border: 0.1rem solid #686b8c;
+        padding: 0.6rem 1rem 0.6rem;
+        //display: inline-block;
+        border-radius: 2rem !important;
+        margin-right: 0.8rem;
+        bottom: 0.5rem;
+        vertical-align: middle;
+        display: inline-block;
+      }
+
+      .dropdown-menu {
+        border-top-left-radius: 0px;
+       
+
+        .dropdown-close {
+          width: 34px;
+          height: 30px;
+          background-color: $color-4;
+          border-radius: 1rem 1rem 0 0;
+          content: "";
+          position: absolute;
+          left: -1px;
+          transform: translateY(-100%);
+          align-items: center;
+          justify-content: center;
+          display: flex;
+
+          svg {
+            cursor: pointer;
+          }
+        }
+
+        .dropdown-item {
+          &:first-of-type {
+            border-radius: 0rem 1rem 0 0;
+          }
+        }
+
+      
+
+        &.dropdown-menu-right {
+          border-top-right-radius: 0px;
+          border-top-left-radius: 1rem;
+
+          .dropdown-close {
+            right: -1px;
+            left: auto;
+          }
+         
+          .dropdown-item {
+              &:first-of-type {
+                border-radius: 1rem 0rem 0 0;
+              }
+            }
+        }
+
+        
+
+     
+
+        &[x-placement="top-end"] {
+          border-top-right-radius: 1.5rem;
+          border-bottom-right-radius: 0;
+
+          .dropdown-close {
+            bottom: -30px;
+            transform: translateY(0%);
+            border-radius: 0 0 1rem 1rem;
+          }
+
+          .dropdown-item {
+            :first-of-type {
+              border-top-right-radius: 0rem;
+            }
+
+            &:last-of-type {
+              border-bottom-right-radius: 0rem !important;
+              border-bottom: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  position: relative;
+
+  & a {
+    padding: 0 0.5rem;
+  }
+  // & .dropdown {
+  //     & .show {
+  //          background: #f00;
+  //          width: 2rem;
+  //          height: 2rem;
+  //          z-index: 1000;
+  //          position: absolute;
+  // }
+  // }
+  & .dropdown-menu {
+    padding: 0;
+    background: $color-4;
+    border-radius: 1rem;
+    box-shadow: 0px 25px 20px 0px rgb(80, 94, 166, 0.22);
+    margin: 1rem -.7rem 0 0;
+
+    &.show {
+      & .svg-close {
+        display: inline-block;
+        background: $color-4;
+        border-radius: 0.5rem;
+        // padding: 0.5rem 0.8rem;
+        // for trail
+        padding: 1rem 0.8rem;
+        right: 0;
+        position: absolute;
+        top: -2.8rem;
+
+        & svg {
+          fill: $color-secondary;
+          position: relative;
+          top: -0.3rem;
+        }
+      }
+    }
+
+    & .dropdown-item {
+      font-size: $font-size-base;
+      padding: 1.6rem 2rem;
+      line-height: 1.2rem;
+      text-align: left;
+      color: $color-white;
+      border-bottom: 1px solid #686b8c;
+
+      &:hover {
+        background: #2684fe;
+
+        & .vm-dropDownicons {
+          border: 0.1rem solid #7aacec;
+        }
+      }
+
+      &:first-of-type {
+        border-radius: 1rem 1rem 0 0;
+      }
+
+      &:last-of-type {
+        border-radius: 0 0 1rem 1rem;
+        border-bottom: none;
+      }
+
+      & a {
+        & span .vm-actionIcons {
+          background: #ffffff;
+          border: 0.1rem solid #e2ebfb;
+          padding: 0.7rem 1.5rem 0.8rem;
+          //display: inline-block;
+          border-radius: 2rem;
+          margin-right: 0.8rem;
+          float: left;
+        }
+      }
+    }
+  }
+
+  &.active {
+    & a.td-dropdown {
+      background: $color-4;
+      border-radius: 1rem 1rem 0 0;
+
+      & .dots-cont {
+        display: none;
+      }
+
+      & .svg-close {
+        display: block;
+
+        & svg {
+          fill: $color-white;
+        }
+      }
+    }
+
+    & .table-action-menu {
+      display: block;
+      padding: 0;
+      top: 5.5rem !important;
+      background: $color-4;
+      border-radius: 1.5rem 0 1.5rem 1.5rem;
+      box-shadow: 0px 15px 25px 0px rgba(80, 94, 166, 0.15);
+      position: absolute;
+
+      & a {
+        padding: 1.2rem 2rem;
+        display: block;
+        color: $color-white;
+
+        &:not(:last-child) {
+          @include border(bottom, 0.1, solid, lighten($color-4, 10%));
+        }
+      }
+    }
+  }
+}

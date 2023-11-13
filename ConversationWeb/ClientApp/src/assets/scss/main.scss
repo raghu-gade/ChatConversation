@@ -1,0 +1,42 @@
+@import '../scss/vendors/bootstrap-4.5.0-dist/css/bootstrap.min.css';
+@import 'themes/variables';
+
+@import 'abstratct/mixins';
+
+@import 'base/reset';
+@import "base/utilities";
+@import 'base/typography';
+@import 'base/form';
+@import 'base/custom-animation';
+
+@import 'components/pipeline';
+// @import 'components/tab';
+@import 'components/contact';
+@import 'components/flyout';
+@import 'components/left-accordion';
+@import 'components/profile-card';
+@import 'components/wizard';
+@import 'components/duallist';
+@import 'components/tabbar';
+@import 'components/activity-board';
+@import 'components/sales-pipeline';
+@import 'components/assign-users-nave';
+@import 'components/toast-message';
+@import 'components/file-request';
+@import 'components/acitvities';
+
+// @import 'components/sales-pipeline';
+
+
+
+@import 'components/flyout';
+
+@import 'pages/dashboard';
+@import 'pages/login';
+
+@import 'layout/header';
+@import 'layout/sidebar';
+
+@import 'vendors/custom-vendor';
+// @import 'vendors/owlcarousel/assets/owl.carousel.min.css';
+// @import 'vendors/owlcarousel/assets/owl.theme.default.min.css';

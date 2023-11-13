@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Conversation.RequestHandler\Conversation.RequestHandler.csproj" />
+    <ProjectReference Include="..\ConversationAPI.DataAccess\ConversationAPI.DataAccess.csproj" />
+    <ProjectReference Include="..\ConvertionEntities\ConvertionEntities.csproj" />
+  </ItemGroup>
+
+</Project>
+

@@ -1,0 +1,205 @@
+.vm-snapshort{
+
+
+    & .icon-svg{
+        width: 5rem;
+        height: 5rem;
+    }
+}
+.vm-dashboard-phone-icon{
+    position: relative;
+    //left:-1.2rem;
+    //top:-2.8rem;
+}
+.vm-dashboard-upcoming-reminder{
+    background-color: $color-2;
+    border:1px solid $color-11 !important; 
+}
+.vm-reschedule-block{
+    & .vm-reschedule-list{
+        border-top:1px solid darken(desaturate($color-2, 34.65), 7.65);
+    }
+}
+
+.vm-reschedule-view-more{
+    
+    &:before{
+        content: "";
+        border-left: 0.5rem solid transparent;
+        border-right: 0.5rem solid transparent;
+        border-top: 0.5rem solid #323a4d;
+        position: absolute;
+        top: .8rem;
+        right:0rem;
+        //margin-right: -1rem;
+       
+    }
+    &.rotate{
+        &:before{
+            transform: rotate(180deg);
+        }
+    }
+    
+}
+.vm-monthly-goals{
+    // margin-bottom: 10rem;
+    & .vm-goal-icon{
+        top: -4.6rem;
+        right: 2.7rem;
+        z-index: 9;
+        
+    }
+    & .vm-strip{
+        height: 4rem;
+        border: 1px solid $border-color;
+        border-top:0;
+        background-color: $color-white;
+        border-radius: 0rem 0rem 0.5rem 0.5rem !important;
+        transition: all .5s;
+        &.vm-stripe-hide{
+            border:transparent;
+            height: 0;
+             transition: all .5s;
+            & .vm-pull-down{
+                top:-1.2rem !important;
+            }
+        }
+    }
+   & .vm-pull-down{
+        width: 2.4rem;
+        height: 2.4rem;
+        border: 3px solid $color-primary;
+        display: inline-block;
+        border-radius: 50%;
+        position: relative;
+        top: 2.7rem;
+        cursor: pointer;
+        box-shadow: 0rem 1rem 0.7rem 0rem rgba(38, 132, 254, .14); 
+        position: relative;
+        z-index: 9;
+        background: $color-white;
+        & svg{
+            fill: $color-primary;
+            width: 1rem;
+            height: 1rem;
+            position: relative;
+            top: -2px;
+            transition: all .5s;
+            &.rotate{
+                transform: rotate(180deg);
+                top: -.3rem;
+            }
+        }
+        & .line{
+            height: 1.8rem;
+            position: absolute;
+            background:$color-primary;
+            width: .2rem;
+            top: -2.1rem;
+            left: .8rem;
+            &:before , &:after{
+                content: "";
+                width: 100%;
+                height: 0.2rem;
+                background: $color-white;
+                top: .3rem;
+                position: absolute;
+                left: 0;
+            }
+            &:after{
+                top:1.2rem !important;
+            }
+        }
+        &:before{
+            content: "";
+            
+        }
+    }
+    & .vm-monthly-position{
+        background: $color-teritary;
+        padding: 2rem 1rem;
+        border-radius: 0.5rem;
+        width: 7rem;
+        float: right;
+        position: relative;
+        text-align: center;
+        color:$color-1;
+
+        & h2{
+            color: $color-1;
+            & sup{
+                position: relative;
+                top: -1rem;
+                left: -.8rem;
+                color:$color-1;
+            }
+        }
+
+  
+    }
+    & .vm-deals-pipeline{
+        display: none;
+    }
+
+    .shadow {
+        box-shadow: 0px 22px 22px 0px rgba(171, 171, 184, 0.25) !important;
+    }
+}
+.vm-resource-center-arrow{
+    position: absolute;
+    right: 4.4rem;
+    width: 4.4rem;
+    height: 4.4rem;
+    cursor: pointer;
+    margin-top: -1rem;
+}
+.vm-p1 {
+
+    .vm-profile-card{width: 140px;background: none !important;
+    
+        .vm-profile-img-wrapper  {margin: 20px 22px;
+        
+            img.vm-profile-img {width: 12rem;
+                height: 12rem} 
+                .vm-profile-img-remove{ top:0px;}
+        }
+    }
+}
+
+.vm-dashboard-header{
+    & .vm-datepicker{
+        & .form-control{
+            // box-shadow: 0px 2px 2px 0px rgba(165, 129, 225, 0.1);
+            &:focus{
+                color: $color-1;
+            }
+        }
+    }
+}
+// .vm-snapshort{
+//     border: 1px solid darken($color-teritary, 5);
+// }
+
+.vm-get-started-list{
+    & .vm-gsl-icon-bg{
+        width: 5rem;
+        height: 5rem;
+        background: $color-primary;
+        border-radius: 5rem;
+    }
+}
+.vm-notification-list{
+    padding-bottom: 2rem;
+    padding-top:2rem;
+    & label{
+        margin: 0 !important;
+    }
+}
+
+.vm-dashboard-call-option{
+    top:40rem;
+    &.active{
+        left:4rem !important;
+    }
+    
+}

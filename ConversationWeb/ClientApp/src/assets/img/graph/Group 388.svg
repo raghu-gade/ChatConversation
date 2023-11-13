@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="549.553" height="527.135" viewBox="0 0 549.553 527.135">
+  <defs>
+    <filter id="Ellipse_40" x="24.168" y="3.773" width="523.361" height="523.361" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feFlood flood-color="#003fb3" flood-opacity="0.122"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_388" data-name="Group 388" transform="translate(8253 -8416.548)">
+    <g transform="matrix(1, 0, 0, 1, -8253, 8416.55)" filter="url(#Ellipse_40)">
+      <ellipse id="Ellipse_40-2" data-name="Ellipse 40" cx="147.001" cy="147.001" rx="147.001" ry="147.001" transform="matrix(0.54, -0.84, 0.84, 0.54, 82.5, 306.68)" fill="none" stroke="#fff" stroke-width="80"/>
+    </g>
+    <g id="Group_385" data-name="Group 385" transform="translate(-8856 8172)">
+      <ellipse id="Ellipse_12" data-name="Ellipse 12" cx="147.002" cy="147.002" rx="147.002" ry="147.002" transform="translate(742.098 361)" fill="none" stroke="#67b7dc" stroke-width="80" stroke-dasharray="270 780"/>
+      <circle id="Ellipse_14" data-name="Ellipse 14" cx="147.002" cy="147.002" r="147.002" transform="translate(1019.93 669.564) rotate(-174)" fill="none" stroke="#6771dc" stroke-width="80" stroke-dasharray="63 800"/>
+      <circle id="Ellipse_15" data-name="Ellipse 15" cx="147.001" cy="147.001" r="147.001" transform="translate(870.981 715.102) rotate(-130)" fill="none" stroke="#8067dc" stroke-width="80" stroke-dasharray="48 828"/>
+      <circle id="Ellipse_13" data-name="Ellipse 13" cx="147.001" cy="147.001" r="147.001" transform="matrix(-0.358, 0.934, -0.934, -0.358, 1079.018, 423.445)" fill="none" stroke="#6794dc" stroke-width="80" stroke-dasharray="130 780"/>
+      <circle id="Ellipse_19" data-name="Ellipse 19" cx="147.001" cy="147.001" r="147.001" transform="matrix(0.899, -0.438, 0.438, 0.899, 692.535, 440.319)" fill="none" stroke="#dc67ab" stroke-width="80" stroke-dasharray="24 877"/>
+      <ellipse id="Ellipse_18" data-name="Ellipse 18" cx="147.001" cy="147.001" rx="147.001" ry="147.001" transform="matrix(0.545, -0.839, 0.839, 0.545, 685.752, 551.225)" fill="none" stroke="#dc67ce" stroke-width="80" stroke-dasharray="54 861"/>
+      <ellipse id="Ellipse_20" data-name="Ellipse 20" cx="147.001" cy="147.001" rx="147.001" ry="147.001" transform="translate(718.805 388.76) rotate(-10)" fill="none" stroke="#dc6788" stroke-width="80" stroke-dasharray="24 885"/>
+      <circle id="Ellipse_17" data-name="Ellipse 17" cx="147.001" cy="147.001" r="147.001" transform="translate(707.274 608.79) rotate(-74)" fill="none" stroke="#c767dc" stroke-width="80" stroke-dasharray="33 861"/>
+      <circle id="Ellipse_16" data-name="Ellipse 16" cx="147.001" cy="147.001" r="147.001" transform="translate(772.849 680.352) rotate(-101)" fill="none" stroke="#a367dc" stroke-width="80" stroke-dasharray="38 861"/>
+    </g>
+    <text id="_1_" data-name="1%" transform="translate(-7997 8537)" fill="#fff" font-size="14" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">1%</tspan></text>
+    <text id="_1_2" data-name="1%" transform="translate(-8040 8550)" fill="#fff" font-size="14" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">1%</tspan></text>
+    <text id="_2_" data-name="2%" transform="translate(-8081 8589)" fill="#fff" font-size="14" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">2%</tspan></text>
+    <text id="_5_" data-name="5%" transform="translate(-8113 8642)" fill="#fff" font-size="14" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">5%</tspan></text>
+    <text id="_7_" data-name="7%" transform="translate(-8120 8705)" fill="#fff" font-size="14" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">7%</tspan></text>
+    <text id="_10_" data-name="10%" transform="translate(-8094 8781)" fill="#fff" font-size="14" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">10%</tspan></text>
+    <text id="_10_2" data-name="10%" transform="translate(-7991 8830)" fill="#fff" font-size="14" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">10%</tspan></text>
+    <text id="_23_" data-name="23%" transform="translate(-7869 8785)" fill="#fff" font-size="14" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">23%</tspan></text>
+    <text id="_40_" data-name="40%" transform="translate(-7856 8606)" fill="#fff" font-size="14" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">40%</tspan></text>
+    <text id="Freshsurance" transform="translate(-7928 8459)" fill="#323a4d" font-size="14" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600"><tspan x="-82.599" y="0">Freshsurance</tspan></text>
+    <text id="GENCO" transform="translate(-8032 8480.602)" fill="#323a4d" font-size="14" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600"><tspan x="-46.847" y="0">GENCO</tspan></text>
+    <text id="Maker_Agencies" data-name="Maker Agencies" transform="translate(-8092 8525.602)" fill="#323a4d" font-size="14" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600"><tspan x="-100.974" y="0">Maker Agencies</tspan></text>
+    <text id="Jones_LLC." data-name="Jones LLC." transform="translate(-8168 8591.602)" fill="#323a4d" font-size="14" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600"><tspan x="-64.757" y="0">Jones LLC.</tspan></text>
+    <text id="ACME" transform="translate(-8214 8720.602)" fill="#323a4d" font-size="14" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600"><tspan x="-38.083" y="0">ACME</tspan></text>
+    <text id="Smith_Agency" data-name="Smith Agency" transform="translate(-8142 8837.602)" fill="#323a4d" font-size="14" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600"><tspan x="-87.876" y="0">Smith Agency</tspan></text>
+    <text id="Tyler_Agency" data-name="Tyler Agency" transform="translate(-8011 8921.602)" fill="#323a4d" font-size="14" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600"><tspan x="-81.396" y="0">Tyler Agency</tspan></text>
+    <text id="Tymer_Insurity" data-name="Tymer Insurity" transform="translate(-7776 8874.602)" fill="#323a4d" font-size="14" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600"><tspan x="-90.467" y="0">Tymer Insurity</tspan></text>
+    <text id="Applatian" transform="translate(-7741 8511.602)" fill="#323a4d" font-size="14" font-family="SegoeUI-Semibold, Segoe UI" font-weight="600"><tspan x="-61.428" y="0">Applatian</tspan></text>
+    <g id="target-card_copy_19" data-name="target-card copy 19" transform="translate(-7984.716 8468.875) rotate(97)" fill="none" stroke="#788192" stroke-width="1">
+      <rect width="34" height="1" stroke="none"/>
+      <rect x="0.5" y="0.5" width="33" fill="none"/>
+    </g>
+    <g id="target-card_copy_19-2" data-name="target-card copy 19" transform="translate(-8056.823 8490.442) rotate(62)" fill="none" stroke="#788192" stroke-width="1">
+      <rect width="34" height="1" stroke="none"/>
+      <rect x="0.5" y="0.5" width="33" fill="none"/>
+    </g>
+    <g id="target-card_copy_19-3" data-name="target-card copy 19" transform="matrix(0.695, 0.719, -0.719, 0.695, -8107.733, 8538.111)" fill="none" stroke="#788192" stroke-width="1">
+      <rect width="34" height="1" stroke="none"/>
+      <rect x="0.5" y="0.5" width="33" fill="none"/>
+    </g>
+    <g id="target-card_copy_19-4" data-name="target-card copy 19" transform="translate(-8201.943 8713.513) rotate(-9)" fill="none" stroke="#788192" stroke-width="1">
+      <rect width="68" height="1" stroke="none"/>
+      <rect x="0.5" y="0.5" width="67" fill="none"/>
+    </g>
+    <g id="target-card_copy_19-5" data-name="target-card copy 19" transform="translate(-8158.263 8814.733) rotate(-29)" fill="none" stroke="#788192" stroke-width="1">
+      <rect width="68" height="1" stroke="none"/>
+      <rect x="0.5" y="0.5" width="67" fill="none"/>
+    </g>
+    <g id="target-card_copy_19-6" data-name="target-card copy 19" transform="matrix(0.719, -0.695, 0.695, 0.719, -8039.089, 8900.946)" fill="none" stroke="#788192" stroke-width="1">
+      <rect width="68" height="1" stroke="none"/>
+      <rect x="0.5" y="0.5" width="67" fill="none"/>
+    </g>
+    <g id="target-card_copy_19-7" data-name="target-card copy 19" transform="matrix(0.616, 0.788, -0.788, 0.616, -7866.822, 8799.588)" fill="none" stroke="#788192" stroke-width="1">
+      <rect width="68" height="1" stroke="none"/>
+      <rect x="0.5" y="0.5" width="67" fill="none"/>
+    </g>
+    <g id="target-card_copy_19-8" data-name="target-card copy 19" transform="translate(-7787.889 8525) rotate(135)" fill="none" stroke="#788192" stroke-width="1">
+      <rect width="68" height="1" stroke="none"/>
+      <rect x="0.5" y="0.5" width="67" fill="none"/>
+    </g>
+    <g id="target-card_copy_19-9" data-name="target-card copy 19" transform="matrix(0.848, 0.53, -0.53, 0.848, -8179.853, 8599.246)" fill="none" stroke="#788192" stroke-width="1">
+      <rect width="68" height="1" stroke="none"/>
+      <rect x="0.5" y="0.5" width="67" fill="none"/>
+    </g>
+  </g>
+</svg>

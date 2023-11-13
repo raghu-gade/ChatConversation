@@ -1,0 +1,104 @@
+.vm-login-bg{
+    position:relative ;
+    min-height: 100vh;
+        &:before, &:after{
+        content: "";
+        position: absolute;
+    }
+    &:before{
+        width: 61rem;
+        height: 43rem;
+        background: url('../img/login/shape-one.png') no-repeat;
+    }
+    &:after{
+        background: url('../img/login/shape-two.png') no-repeat;
+        width: 68rem;
+        height: 52rem;
+        bottom: 0;
+        right: -2px;
+    }
+    & .vm-login-notification{
+        width: 75rem;
+        height: 30rem;
+        position: absolute;
+        top:-2.6rem;
+        right:0;
+        background: url('../img/login/notifications.png') no-repeat;
+        @include vm-breakpoint(xl-min-1600){
+            width: 85rem;
+            top: 0.4rem;
+          }
+    }
+
+    & .login-header{
+        & h1{
+            font-size: 4rem;
+            @include vm-breakpoint(xl-min-1600){
+                font-size: 5rem;
+            }
+            & span{
+                font-size: 8rem;
+                @include vm-breakpoint(xl-min-1600){
+                    font-size: 10rem;
+                }
+            }
+        }
+    }
+    & .login{
+        width: 45rem;
+        margin-left:18rem;
+        position: absolute;
+        z-index: 1;
+        padding-bottom: 5rem;
+        top:50%;
+        transform: translateY(-50%);
+        & .vm-reset-password-list{
+            list-style-type:decimal;
+            & li{
+                margin-bottom: .5rem;
+            }
+        }
+        & .login-form{
+            margin-top: 1rem;
+           & .input-group-prepend{
+                margin-left: 1rem;
+            }
+            & .input-group-text{
+                background-color:transparent;
+                border: 0;
+            }
+            & .form-control{
+                background-color: $color-2;
+                border:1px solid $color-11 !important; 
+                height: 5.2rem;
+                color:$color-4;
+                &::placeholder{
+                    color:$color-4;
+                    }
+                }
+            & .input-group{
+                & .form-control{
+                    border-left-color: transparent !important;
+                    border-radius: 0.5rem;
+                    // padding-left: .3rem;
+                }
+            }
+            & .vm-login-next{
+                position: absolute;
+                right:2.6rem;
+                top:1.6rem;
+                color:$color-12;
+                z-index: 9;
+                & span{
+                    position: relative;
+                    top:.5rem
+                 }
+                }
+            }
+        }
+    & .login-footer{
+        position: absolute;
+        bottom: 1rem;
+        z-index: 1;
+    }
+}      

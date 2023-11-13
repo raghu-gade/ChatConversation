@@ -1,0 +1,21 @@
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand">Twilio Conversation (Chat example)</a>
+    <form class="d-flex" *ngIf="enableChat">
+      <span class="navbar-text">
+        {{userName}}
+      </span>
+      <button class="btn btn-info ms-2" type="button" (click)="logout()">Logout</button>
+    </form>
+  </div>
+</nav>
+<div class="mx-auto" style="width: 200px;">
+  <div class="d-inline-flex flex-column p-2 bd-highlight mt-4" *ngIf="!enableChat">
+    <span>Username</span>
+    <input class="form-control me-2" type="text" placeholder="Enter username" [(ngModel)]="userName" />
+    <button type="button" class="btn btn-info mt-2" (click)="setName()">Login</button>
+  </div>
+</div>
+<div *ngIf="enableChat">
+  <app-chats></app-chats>
+</div>

@@ -1,0 +1,82 @@
+
+// slimscroll related scss
+.slimscroll-lob {
+    height:calc(100% - 81px);
+    position: relative;
+   
+}
+.slimscroll-comments{
+    height:calc(100% - 150px);
+    position: relative;
+    margin-right: -2rem;
+}
+.slimscroll-comments.aftertextarea{
+    height:calc(100% - 340px);
+    position: relative;
+    margin-right: -2rem;
+}
+.slimscroll-changeEvents {
+    height:calc(100% - 71px);
+    position: relative;
+   //z-index: 9 !important;
+}
+.slimscroll-conditions {
+    height:calc(100% - 113px);
+    &.slimscroll-conditions-with-syntax-panel {
+        height:calc(100% - 193px);
+
+    }
+        .mCSB_scrollTools {
+            right: 10px;
+        }
+
+
+}
+.slimscroll-change-events {
+    height:calc(100% - 178px);
+
+}
+
+
+    
+
+.slimscroll-full-height {
+    height:100%;
+ 
+}
+ 
+.slimscroll-comparison {
+    height:calc(100% - 50px);
+ 
+}
+
+
+.mCustomScrollbar {
+    .mCSB_container {
+        margin-right: 10px !important;
+
+     }
+
+}
+.mCSB_scrollTools {
+    width: 8px !important;
+}
+.mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar { 
+    background-color: rgba(0,0,0,0.2) !important;
+}
+
+.mCS-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    background-color: rgba(0,0,0,0.2) !important;
+
+}
+
+.slimscroll-comments{
+
+    // .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar { 
+    //     background-color: rgba(105,117,141,0.2) !important;
+    // }
+    .mCS-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+        background-color: rgba(105,117,141,0.2) !important;
+    
+    }
+}

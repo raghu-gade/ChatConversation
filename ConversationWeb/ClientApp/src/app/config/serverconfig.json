@@ -1,0 +1,13 @@
+{
+  "local": {
+    "name": "local",
+    "code": "local",
+    "baseurl": ""
+  },
+  "baseurl_Conversation": {
+    "name": "baseurl_Workspaces",
+    "code": "baseurl_Workspaces",
+    "baseurl": "http://localhost:7141/api/"
+  }
+
+}

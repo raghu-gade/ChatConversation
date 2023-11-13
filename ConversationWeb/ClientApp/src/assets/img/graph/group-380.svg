@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="312" height="34" viewBox="0 0 312 34">
+  <defs>
+    <filter id="Rectangle_87" x="0" y="0" width="312" height="34" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feFlood flood-color="#003fb3" flood-opacity="0.122"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Group_380" data-name="Group 380" transform="translate(-625 -447)">
+    <g transform="matrix(1, 0, 0, 1, 625, 447)" filter="url(#Rectangle_87)">
+      <rect id="Rectangle_87-2" data-name="Rectangle 87" width="306" height="28" rx="3" transform="translate(3 1)" fill="#fff"/>
+    </g>
+    <g id="Group_285" data-name="Group 285">
+      <path id="Rectangle_92" data-name="Rectangle 92" d="M3,0H64a0,0,0,0,1,0,0V28a0,0,0,0,1,0,0H3a3,3,0,0,1-3-3V3A3,3,0,0,1,3,0Z" transform="translate(628 448)" fill="#f96c6c"/>
+      <rect id="Rectangle_91" data-name="Rectangle 91" width="55" height="28" transform="translate(745 476) rotate(180)" fill="#cfdc49"/>
+      <rect id="Rectangle_90" data-name="Rectangle 90" width="98" height="28" transform="translate(843 476) rotate(180)" fill="#569cd1"/>
+      <path id="Rectangle_88" data-name="Rectangle 88" d="M0,0H21a3,3,0,0,1,3,3V25a3,3,0,0,1-3,3H0a0,0,0,0,1,0,0V0A0,0,0,0,1,0,0Z" transform="translate(910 448)" fill="#f8d457"/>
+      <rect id="Rectangle_89" data-name="Rectangle 89" width="72" height="28" transform="translate(910 476) rotate(180)" fill="#e45c9f"/>
+    </g>
+    <text id="_10" data-name="10" transform="translate(683 466.602)" fill="#fff" font-size="12" font-family="SegoeUI, Segoe UI"><tspan x="-12.938" y="0">10</tspan></text>
+    <text id="_7" data-name="7" transform="translate(739 466.602)" fill="#fff" font-size="12" font-family="SegoeUI, Segoe UI"><tspan x="-6.469" y="0">7</tspan></text>
+    <text id="_35" data-name="35" transform="translate(831 466.602)" fill="#fff" font-size="12" font-family="SegoeUI, Segoe UI"><tspan x="-12.938" y="0">35</tspan></text>
+    <text id="_24" data-name="24" transform="translate(903 466.602)" fill="#fff" font-size="12" font-family="SegoeUI, Segoe UI"><tspan x="-12.938" y="0">24</tspan></text>
+    <text id="_5" data-name="5" transform="translate(930 466.602)" fill="#fff" font-size="12" font-family="SegoeUI, Segoe UI"><tspan x="-6.469" y="0">5</tspan></text>
+  </g>
+</svg>

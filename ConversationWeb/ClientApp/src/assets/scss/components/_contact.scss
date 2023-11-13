@@ -1,0 +1,1167 @@
+.vm-close-icon{
+    display:inline-block;
+    background:$color-danger;
+    border-radius: 50%;
+    text-align: center;
+    color:$color-white !important;
+    width: 2.4rem;
+    height: 2.4rem;
+    line-height: 2.4rem;
+
+}
+
+.vm-contact-accordian{
+    & .vm-add-icon{
+        position: absolute;
+        width: 3.6rem;
+        height: 5.1rem;
+        right: -.3rem;
+        top: .5rem;
+    }
+    & .vm-accordion-header{
+        & .vm-accordion-arrow{
+
+           
+
+            position: absolute;
+            transition: all .3s;
+            top:.6rem;
+            left: -.2rem;   
+            
+        }
+        &.collapsed{
+            & a{
+                & h4{
+                    & .vm-accordion-arrow{
+                            transform: rotate(-90deg);
+                            // top: .2rem;
+                    }
+                }
+            }
+          
+    
+        }
+        & .vm-count{
+            & h4{
+                color:$color-primary;
+            }
+         
+        }
+
+       
+
+    }
+   &.vm-contact-accordian-zero-count{
+       & .vm-add-icon{
+            top:0rem;
+       }
+       & .vm-accordion-arrow{
+           top:.1rem;
+       }
+   }
+   
+}
+
+
+.vm-contact-left-panel{
+    & .vm-contact-info{
+        & .vm-dropdown.vm-multi-select-dropdown{
+        & .dropdown-toggle{
+            padding-right: 1rem;
+            & span{
+                top:-1px;
+            }
+        }
+        }
+        & .role{
+            background:$color-8;
+            border-radius: 3rem;
+            color: $color-white;
+            &.customer{
+                background:$color-success;
+                
+                color: $color-white;
+            }
+        }
+
+        & header {
+            & .vm-dropdown-action{
+                width: 9.8rem;
+                position: absolute;
+                right: -1.5rem;
+                top: -4.5rem;
+
+                & .dropdown-toggle{
+                    box-shadow: none;
+                    border: 1px solid $border-color;
+                    padding: .7rem 3.5rem .7rem 1rem;
+                    font-family: $font-primary;
+                    font-size: 1.4rem;
+
+                    &::after{
+                        right: 1.5rem;
+                        margin-top: 1px;
+                    }
+
+                }
+                & .dropdown-menu{
+                    font-family: $font-primary;
+                    font-size: 1.4rem;
+                }
+            }
+
+            & .vm-contact-profile{
+                // background: $color-teritary;
+                width: 7rem;
+                height: 7rem;
+                border-radius: 50%;
+                object-fit: cover;
+                object-position: center center;
+                margin:0 auto 1.5rem;
+                color:$color-12;
+                font-size: 2.8rem;
+                font-family: $font-primary-semibold;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background:darken($color-teritary, 5) ;
+                border:1px solid darken($color-teritary, 10) ;
+                & img{
+                    width: 100%;
+                    height: 100%;
+                    margin: 0 auto;
+                    object-fit: cover;
+                    object-position: center center;
+                    border-radius: 50% !important;
+                }
+                & img.admin{
+                    width: 7rem;
+                    height: 7rem;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    object-position: center center;
+                }
+
+            }
+        }
+
+        & .contact-detail{
+            & .vm-separator{
+                width: 3rem;
+                height: .5rem;
+                border-radius: 10rem;
+                background: darken($color-teritary, 6);
+                box-shadow: inset 1px 1px 1px 0px rgba(255, 255, 255, 1), inset -1px -1px 1px 0px rgba(0, 0, 0, 0.3);
+
+
+
+                .Rounded_Rectangle_10 {
+                    background-color: #cadcff;
+                    position: absolute;
+                    left: 268px;
+                    top: 479px;
+                    width: 20px;
+                    height: 5px;
+                    z-index: 228;
+                  }
+
+                  
+
+                  
+            }
+        }
+        & .vm-contact-list{
+            display: flex;
+            justify-content:center;
+
+            & li{
+                margin: 0 .5rem;
+                & a{
+                    // padding:.85rem;
+                    background:darken($color-teritary, 3);
+                    border-radius: 50%;
+                    border:1px solid darken($color-teritary, 6);
+                    width: 4rem;
+                    height: 4rem;
+                    display: inline-block;
+                    text-align: center;
+                     line-height: 3.4rem;
+                }
+            }
+        }
+    }
+    & .vm-category{
+        & ul{
+          & li{
+                margin-right:.3rem;
+                margin-bottom: 1rem;
+                display: inline-block;
+
+                &.list-item{
+                    display: inline-flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                     border-radius: 3rem;
+                     color: $color-4;
+                     text-align: center;
+                     padding:.8rem 1rem;
+                     cursor: pointer;
+                     background:darken($color-teritary, 3);
+                     border:1px solid darken($color-teritary, 6);
+                     
+         
+                     &:before{
+                         content:"";
+                         width: .7rem;
+                         height: .7rem;
+                         background: $color-white;
+                         box-shadow: 0px 3px 3px 0px rgba(102, 118, 149, 0.35) !important;
+                         display: inline-block;
+                         position: relative;
+                        //  top: -.2rem;
+                         border-radius: 50%;
+                         margin-right: .6rem;
+                         
+                     }
+         
+         
+                     & .vm-input-group{
+
+                        & .form-control{
+                            width: 5.5rem;
+                            height: 3.2rem;
+                            color: $color-4 !important;
+                            padding: 0;
+                            margin-right: 0.5rem;
+                            border: 0;
+                            background: none;
+
+                            &::placeholder{
+                                color: lighten($color-4,30%) !important;
+                            }
+
+                            &:focus{
+                                background: none;
+                                color: $color-4 !important;
+                            }
+                        }
+                     }
+                    
+         
+                       
+         
+                 }
+
+                &:last-child{
+                    padding: 0 .4rem 0rem 1rem;
+                }
+                &:nth-last-child(2),
+                &:last-child{
+                    // margin-bottom: 0;
+                    @media (xl-max-1280) {
+                        margin-bottom: .8rem !important;
+                    }
+                }
+
+
+            }
+        }
+      
+    }
+   & .vm-owner{
+        & .dropdown-toggle{
+            box-shadow: none !important;
+            padding-top: 2rem !important;
+            padding-bottom: 2rem !important;
+            border: none !important;
+            font-size:1.4rem !important;
+            text-align: center !important;
+            border-radius: 0 !important;
+            height: 5rem;
+            background:darken($color-teritary, 6) !important;
+            border-bottom-left-radius:.5rem !important;
+            border-bottom-right-radius:.5rem !important;
+            margin-bottom: -1px;
+            span{
+                margin-right:.4rem;
+            }
+            &:after{
+                top:3rem !important;
+                right:auto;
+            }
+            &:focus{
+                border-color: transparent !important;
+            }
+        }
+    }
+}
+
+.vm-add-contact{
+    display: none;
+   & .vm-close-icon{
+        position: absolute;
+        right: 3.4rem;
+        top: 2rem;
+    }
+}
+
+  .vm-line-separator{
+
+    &::after{
+        content: '';
+        width: .2rem;
+        height: 1rem;
+        background: $color-12;
+        margin: 0 .5rem 0 .8rem;
+        display: inline-block;
+    }
+  }
+  
+
+  .vm-edit-contact{
+
+    & .vm-text-dark{
+        color: $color-3;
+    }
+    & .vm-input-group{
+
+        & .form-control{
+            
+            color: lighten($color-3,10%) !important;
+            padding: 0;
+            margin-right: 0.5rem;
+            border: 0;
+            border-bottom: 1px dashed $border-color;
+            border-radius: 0;
+            font-size: 1.4rem;
+            font-family: $font-primary-semibold;
+            background: none;
+
+            &::placeholder{
+                color: lighten($color-3,10%) !important;
+            }
+
+           
+        }
+     }
+  }
+
+.vm-add-edit-contact{
+    &.vm-add-edit-contact-bg{
+        background: $color-teritary;
+        border: .2rem dashed darken($color-teritary, 4);
+        padding: 5rem;;
+    }
+    & .vm-edit-icon{
+        background: $color-teritary;
+       padding: 1.5rem;
+       display: inline-block;
+       border: .2rem dashed darken($color-teritary, 4);
+       border-radius: .5rem;
+
+       & .icon-svg{
+           width: 2.2rem;
+           height: 2.4rem;
+       }
+
+    }
+    
+}
+
+
+.vm-all-contact{
+
+ 
+    & .vm-header{
+        & .vm-systemlog-drop{
+            width: 15rem !important;
+            & .dropdown-toggle{
+                &:after{
+                    margin-top: .3rem;
+                }
+            }
+        }
+        & .vm-multi-select-dropdown{
+            width: 8rem;
+            margin-top: .8rem !important;
+            height: 4rem;
+
+            & > .dropdown-toggle{
+                font-size: 1.8rem;
+                font-family: $font-primary-semibold;
+                padding: 0;
+                box-shadow: none;
+                border:0;
+                border-radius: 0.5rem 0.5rem 0 0;
+
+                &::after{
+                    // right:3.5rem;
+                    // top: 1.5rem;
+                }
+            }
+
+            & .dropdown-menu{
+                width: 18rem;
+                & ul{
+                    & li{
+                        border-top:0 !important;
+                    }
+                }
+            }
+
+            &.show .dropdown-toggle {
+                // border: none !important;
+            }
+        }
+
+        & .vm-add-icon{
+            margin-right: -3.6rem !important;
+        }
+    }
+
+
+    & li{
+
+        padding: 3rem;
+
+        &.media{
+            
+
+            & .media-body{
+
+                & h5{
+                    font-family: $font-primary-bold;
+                    color: $color-12;
+                }
+
+                .vm-contact-subject-body {
+                    color:$color-4;
+                }
+                .vm-contact-date {
+                    color:$color-4;
+                    font-size: 1.2rem;
+                }
+            }
+            &:nth-child(even){
+                background: lighten($color-teritary, 3%);
+           }
+
+
+          }
+
+        
+        &:not(:last-child){
+            border-bottom: 1px solid $border-color;
+        }
+      
+    }
+
+  }
+  .vm-profile-card {
+    width: 310px;
+    background-color: $color-teritary;
+    height: calc(100% - 4px);
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    bottom: 2px;
+    border-radius: 0.5rem 0rem 0rem 0.5rem;
+    z-index: 10;
+    @include vm-breakpoint(lg) {
+        width: 220px;
+    }
+
+    .vm-profile-img-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 5.5rem;
+
+        .vm-profile-img-remove {
+            width: 28px;
+            height: 28px;
+            background-color: $color-danger;
+            color: $color-white;
+            font-family: $font-primary-bold;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 9px;
+            line-height: 9px;
+            position: absolute;
+            right: 10px;
+            top: 6px;
+            cursor: pointer;
+           
+            
+
+        }
+
+        .vm-profile-img-edit {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background-color: $color-white;
+            position: absolute;
+            bottom: -8px;
+            left: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: box-shadow 0.4s ease-in;
+            cursor: pointer;
+            @include vendor-prefix('box-shadow', 0px 5px 5px 0px rgba(38, 132, 254, 0.2));
+            &:hover {
+                @include vendor-prefix('box-shadow', 0px 15px 15px 0px rgba(38, 132, 254, 0.2));
+            }
+
+        }
+  
+        img.vm-profile-img {
+            width: 16rem;
+            height: 16rem;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center center;
+        }
+
+    }
+
+    .vm-profile-body {
+        padding: 3.5rem;
+        .form-control {
+            border: none;
+        }
+    }
+     
+
+}
+
+.vm-profile-card-space {
+    @include vm-breakpoint(lg) {
+        padding-left: 240px;
+    }
+}
+
+.vm-contact-more-details{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color:$color-white;
+    top:0;
+    left:0;
+    opacity: 95%;
+    display: none;
+    transition: all .5s;
+    &.view{
+        display: block;
+        padding: 5rem;
+    }
+}
+.vm-contact-accordian{
+    & .vm-bg-warning{
+        box-shadow: none !important;
+        & .vm-edit-icon{
+            border: .2rem dashed rgba($color-black, .04) !important;
+            background: rgba($color-black, .05) !important;
+        }
+    }
+    & .vm-accordion-header{
+            & h4{
+                font-family: "SegoeUISemiBold";
+                color:$color-12;
+            }
+    }
+}
+
+.vm-contact-bulk-action {
+.vm-bulk-action-panel {
+    padding: 3px 0px;
+    border-radius:0.8rem 0.8rem 0 0!important;
+    background-color: $color-teritary;
+    border:3px solid $color-white;
+    }
+}
+.vm-contact-all-btn{
+    margin-left: -1.7rem !important;
+}
+
+.vm-add-contact {
+    .form-group {
+        margin-bottom: 1rem;
+    }
+}
+
+.vm-record-panel {
+    .record-icon 
+    {
+       margin-top: -0.4rem; 
+    }
+}
+.vm-contact-info, .vm-category{
+    background: $color-teritary;
+    border-bottom:1px solid darken($color-teritary, 6) ;
+
+
+}
+.vm-contact-info{
+    border-top-left-radius: .7rem;
+    border-top-right-radius: .7rem;
+}
+
+
+
+
+
+
+
+
+// Call Interaction Detail Start
+  
+.vm-call-option{
+    position: absolute;
+    left:-185%;
+    top: 20rem;
+    width: 27rem;
+    z-index: 10;
+   
+    & .text-white {
+        color: #fff !important;
+    }
+            
+    &.active{
+        left: 85%;
+        // display: block;
+        -webkit-animation: slid5in-left 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            animation: slide-in-left 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+}
+
+.vm-call-info, .vm-video-call-info{
+
+    // box-shadow: 0px 30px 25px 0px rgba(27, 93, 178, 0.18),0px 1px 2px 0px rgba(27, 93, 178, 0.08);// 14-12-2021 css updated
+    position: absolute;
+    z-index: 9;
+    width: calc(100% - 7rem);
+    top: -18rem;
+    left:7rem;
+    & .vm-border-left-shadow{
+        border-left:1px solid darken($color-primary, 5%);
+        box-shadow: lighten($color-primary, 2%);
+    }
+    & .vm-border-right-shadow{
+        border-right:1px solid darken($color-primary, 5%);
+    }
+    & .vm-red{
+        color: #f2b2bb;
+    }
+
+    & .vm-top{
+        top: 6.9rem;
+    }
+
+    &.active{
+        // left: 100%;
+        // display: block;
+        top:11.6rem;
+        -webkit-animation: slide-in-top 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            animation: slide-in-top 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+
+    & .vm-lead{
+        display: inline-block;
+        padding: 0.1rem 1.2rem 0.3rem 1.2rem;
+        border-radius: 2rem;
+        font-family: $font-primary;
+        font-size: 1.2rem;
+        position: relative;
+        // top: -0.9rem;
+        background: #81a8d6;
+        color: #ffffff;
+    }
+    
+
+    & .vm-action{
+
+        & ul{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            // flex-direction: row-reverse!important;
+            position: relative;
+
+            & li{
+                // display: inline-block;
+                padding:0 .8rem;
+                // padding: 0 0rem 0 1rem;
+                height: 8rem;
+                display: flex;
+                // justify-content: space-between;
+                align-items: center;
+
+
+                &:last-child{
+                    // margin-right: 1.5rem;
+                    
+                    margin-left: auto;
+                    // position: absolute;
+                    // right: -8.4rem;
+                    padding: 0;
+
+                    & a.vm-call-info-end{
+                        background: lighten($color-danger,10%);
+                        height: 100%;
+                        display: flex;
+                        align-items: center;
+                        padding: 0 1.2rem;
+                        width: 8rem;
+                    }
+                    
+                    
+
+                }
+                 & a.vm-call-ignore{
+                     height: 8rem;
+                     width: 8rem;
+                 }
+                 & a.vm-call-exit{
+                    background: darken($color-danger,.5%) !important;
+                }
+
+
+                
+
+                & a{
+
+                    // display: inline-block;
+                    width: 4rem;
+                    height: 5rem;
+                    display: flex !important;
+                    justify-content: space-around;
+                    align-items: center;
+
+                    & svg{
+                        // 13-12-2021 css updated start here
+                        // width: 3rem;
+                        // height: 2.5rem;
+                        // 13-12-2021 css updated end here
+                        fill: $color-white;
+        
+                        & path{
+                            fill: $color-white;
+                        }
+                    }
+                    &.active{
+                
+                        border-radius: 10px;
+                        background:#247beb;
+                        box-shadow: inset -1px -1px 1px 0px rgba(255, 255, 255, 0.3), inset 1px 1px 1px 0px rgba(28, 94, 180, 0.6);
+                       
+                        // line-height: 4;
+                        // text-align: center;  
+                        // display: block;
+ 
+                      
+                    }
+                }
+
+                
+            }
+        }
+
+        & .dropdown-menu ul{
+            display: inherit !important;
+            
+                & li{
+                    height: auto;
+                    padding: 0 !important;
+
+                    & a{
+                        width: auto !important;
+                        height: auto !important;
+                        display: inherit !important;
+                        text-align: left;
+                    }
+
+                    &:last-child{
+                        position: inherit;
+                        right: inherit;
+
+                        // & a{
+                        //  background: inherit !important;
+                        // }
+                    }
+                }
+        }
+    }
+    & .vm-action-pad{
+
+        & li{
+            padding: 0 1rem !important;
+
+            &:last-child{
+                padding: 0 !important;
+            }
+        }
+
+        & .dropdown-menu ul{
+            display: inherit !important;
+            
+                & li{
+                    height: auto;
+                    padding: 0 !important;
+
+                    &:last-child{
+                        position: inherit;
+                        right: inherit;
+
+                        // & a{
+                        //  background: inherit !important;
+                        // }
+                    }
+                }
+        }
+    }
+
+    &-end{
+        background: #ff91a0;
+        & a{
+            padding: 3rem 2rem;
+            display: block;
+        }
+    }
+   
+    & .vm-call-progress{
+       position: relative;
+       top: .9rem;
+
+        & button{
+            position: relative;
+            height: 3.5rem;
+
+            &.btn-secondary{
+                &:hover,
+                &:focus{
+                    background: $color-teritary !important;
+                }
+            }
+
+            & span.progress{
+                position: absolute;
+                width: 40%;
+                background: $color-2;
+                height: 100%;
+                top: 0;
+                left: -.1rem;
+                border-top-left-radius: 5rem;
+                border-bottom-left-radius: 5rem;
+            }
+            & span{
+                position: relative;
+            }
+        }
+       
+    }
+
+   
+
+}
+
+.vm-call-notes{
+    width: 35rem;
+    position: fixed;
+    right: -100%;
+    bottom: 1.5rem;
+    z-index: 10;
+
+    
+    
+    
+    &.active{
+        right: 1.5rem;
+        // display: block;
+        -webkit-animation: slide-in-right 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            animation: slide-in-right 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
+}
+
+
+.vm-income-call-flyout{
+    width: 35rem !important;
+    background: $color-primary !important;
+    position: fixed !important;
+
+    & .vm-flyout-header{
+        // padding: 0 !important;
+        background: transparent !important;
+        
+    }
+
+    & .vm-call-profile{
+
+        margin-top: 6rem;
+
+        & .vm-pic{
+
+          
+
+            background: $color-white;
+            width: 10rem;
+            height: 10rem;
+            position: relative;
+            margin: 0 auto;
+            border-radius: 100%;
+            animation: play 2s ease infinite;
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+            -ms-backface-visibility: hidden;
+            backface-visibility: hidden;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2.5rem;
+          
+
+            & span{
+                background:$color-white;
+                width: 7rem;
+                height: 7rem;
+                border-radius: 50%;
+                object-fit: cover;
+                object-position: center center;
+                // margin: 0 auto 1.5rem;
+                color: $color-4;
+                font-size: 2.8rem;
+                font-family: "SegoeUISemibold";
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+                & img{
+                    width: 7rem;
+                    height: 7rem;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    object-position: center center;
+                }
+
+
+
+
+            }
+        }
+
+        & .vm-call-connection{
+            
+            padding-bottom: 5rem;
+
+            a{
+                box-shadow: 0px 5px 5px 0px rgba(251, 73, 98, 0.2);
+                border-radius: 50%;
+                display: inline-block;
+                // padding: 2rem;
+                width: 5rem;
+                height: 5rem;
+                text-align: center;
+                line-height: 3.4;
+                position: relative;
+                &:hover {
+                    .vm-call-snipet {
+                        display: block;
+                    }
+
+                }
+
+                .vm-call-snipet {
+                        display:none;
+                        background: #f7f7fc;
+                        position: absolute;
+                        line-height: initial;
+                        padding: 0.5rem 0.75rem;
+                        border-radius: 0.3rem;
+                        top: 107%;
+                        width: 10rem;
+                        margin: 0 auto;
+                        right: -50%;
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: -10%;
+                        left: 0;
+                        right: 0;
+                        width: 1.2rem;
+                        height: 1.2rem;
+                        background: $body-background-color;
+                        transform: rotate(44deg);
+                        margin: 0 auto;
+                    }
+                }
+                
+
+                &.receive{
+                    background: #a2e99c;
+                }
+                &.disconnect{
+                    background: #fc8686;
+                }
+                &.vm-ignore{
+                    background: #ede27e;
+                }
+            }
+        }
+       
+    }
+    
+    & .vm-income-call-footer{
+
+        & .vm-multi-select-dropdown{
+            width: 15rem !important;
+            margin: 0 auto;
+        }
+    }
+
+    // & .vm-call-animation {
+    //     background: #fff;
+    //     width: 135px;
+    //     height: 135px;
+    //     position: relative;
+    //     margin: 0 auto;
+    //     border-radius: 100%;
+    //     border: solid 5px #fff;
+    //     animation: play 2s ease infinite;
+    //     -webkit-backface-visibility: hidden;
+    //     -moz-backface-visibility: hidden;
+    //     -ms-backface-visibility: hidden;
+    //     backface-visibility: hidden;
+      
+    // }
+
+    @keyframes play {
+
+        0% {
+            transform: scale(1);
+        }
+        15% {
+            box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.4);
+        }
+        25% {
+            box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.4), 0 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+        25% {
+            box-shadow: 0 0 0 15px rgba(255, 255, 255, 0.4), 0 0 0 30px rgba(255, 255, 255, 0.2);
+        }
+    
+    }
+    
+}
+.vm-profile-pic, .vm-profile{
+    position: relative;
+    // &:before{
+    //     content:"";
+    //     width:100%;
+    //     height: 100%;
+    //     background: $color-white;
+    //     position: absolute;
+    //     z-index: -1;
+    //      left: 0;
+    //     border-radius: 50%;
+    // }
+}
+.vm-profile{
+    background-image: linear-gradient(to right, rgba(109, 179, 242, .6), rgba(109, 179, 242, .6));
+}
+
+// System Log CSS //
+.vm-system-log{
+   & .vm-system-log-grid{
+       &:nth-child(even){
+           background: $flyout-bg !important;
+       }
+        & .vm-system-log-name{
+            width: 3.2rem;
+            height: 3.2rem;
+            border-radius: 50%;
+            color: $color-white;
+            text-align: center;
+            line-height: 3.2rem;
+        }
+        & .vm-system-optrator-value{
+            background:darken($color-teritary, 3);
+            border:1px solid darken($color-teritary, 6);
+            padding: 0.3rem 1.5rem .1rem;
+            border-radius: 3rem;
+        }
+    }
+}
+
+.vm-contact-call-option{
+    &.active{
+        left: 4rem;
+    }
+}
+.vm-contact-schedule{
+    display: inline-block;
+    padding: 0.4rem 1.2rem;
+    border-radius: 2rem;
+    font-family: $font-primary;
+    font-size: 1.2rem;
+    position: relative;
+    padding-bottom: .6rem;
+    top: -0.1rem;
+    color:$color-white;
+    margin-left: 1rem;
+    &.new{
+        background:$color-success;
+    }
+    &.upcoming{
+        background:$color-primary;
+    }
+    &.past{
+        background:$color-danger;
+    }
+    &.closed{
+        background:lighten($color-12, 50);
+        color:$color-black !important;
+    }
+}
+
+
+.vm-contactlist-scroll{
+    max-height: 56.3rem;
+    // height: auto;
+}
+.vm-contact-details-card-dark{
+    background-color: rgba($color-teritary, 0.5);
+}
+.vm-contact-details-card-footer{
+    background: darken($color-teritary, 2) !important;
+    border-top:1px solid darken($color-teritary, 6);
+    border-bottom:1px solid darken($color-teritary, 6);
+}
+.vm-contact-details-add-contact{
+    background: #e5eeff;
+    border: 0.2rem dashed #d1e1ff;
+    padding: 5rem;
+}
+.vm-status-badge{
+    color:$color-white;
+    border-radius: 2rem;
+    font-family: "SegoeUI";
+    font-size: 1.2rem;
+    height: 22px;
+    display: inline-block;
+  }
+.vm-status-badge-blue{
+    background:$color-primary;
+}
+.vm-contact-add-family{
+    background: $color-teritary;
+    border: .2rem dashed darken($color-teritary, 4);
+    padding: 5rem;
+}
+.vm-add-edit-contact{
+    position: relative;
+    top:-.5rem;
+}

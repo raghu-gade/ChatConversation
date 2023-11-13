@@ -1,0 +1,12 @@
+{
+  "issuer": "https://identityserver-wb-qa.azurewebsites.net",
+  "requireHttps": false,
+  "redirectUri": "WorkspaceDashboard",
+  "clientId": "localclient",
+  "scope": "openid profile offline_access ManagementApi LocalApiScope",
+  "responseType": "code",
+  "requestAccessToken": true,
+  "sessionChecksEnabled": true,
+  "clearHashAfterLogin": false
+
+}
