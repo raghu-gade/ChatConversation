@@ -11,6 +11,8 @@ namespace Conversation.RequestHandler.ChatHandler
     {
         string CreateChatAccessToken(string name);
         string CreateVideoAccessToken(string name);
+        string CreateVideoTokenWithRoom(string name, string room);
+        Task<IEnumerable<RoomDetails>> GetRooms();
         Task<ChatEntity> CreateFirstConversation(ChatFriendlyName friendlyName);
         Task<ChatEntity> FetchConversation(string ConversationSid);
         Task<Conversations> GetAllConversations();

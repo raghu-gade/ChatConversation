@@ -10,7 +10,13 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Twilio;
+using Twilio.Base;
 using Twilio.Jwt.AccessToken;
+using Twilio.Rest.Video.V1;
+using Twilio.Rest.Video.V1.Room;
+using Microsoft.Extensions;
+using ParticipantStatus = Twilio.Rest.Video.V1.Room.ParticipantResource.StatusEnum;
 
 namespace Conversation.RequestHandler.ChatHandler
 {
@@ -18,10 +24,17 @@ namespace Conversation.RequestHandler.ChatHandler
     {
         public IConfiguration configuration { get; }
         private readonly IHttpHandler httpHandler;
+     
+
+
         public ChatHandler(IConfiguration configurations, IHttpHandler httpHandler)
         {
             this.configuration = configurations;
             this.httpHandler = httpHandler;
+            //_twilioSettings = twilioOptions ?? throw new ArgumentNullException(nameof(twilioOptions));
+
+            //TwilioClient.Init(_twilioSettings.ApiKey, _twilioSettings.ApiSecret);
+            TwilioClient.Init(configuration.GetValue<string>(MessageConstants.ApiSid), configuration.GetValue<string>(MessageConstants.SecretKey));
         }
 
         public async Task<ChatEntity> CreateFirstConversation(ChatFriendlyName friendlyName)
@@ -162,5 +175,65 @@ namespace Conversation.RequestHandler.ChatHandler
             }
         }
 
+        public string CreateVideoTokenWithRoom(string name, string room)
+        {
+            try
+            {
+                string twilioAccountSid = configuration.GetValue<string>(MessageConstants.AccountSid);
+                string twilioApiKey = configuration.GetValue<string>(MessageConstants.ApiSid);
+                string twilioApiSecret = configuration.GetValue<string>(MessageConstants.SecretKey);
+
+                string identity = name;
+
+                var grant = new VideoGrant();
+                grant.Room = room;
+
+                var grants = new HashSet<IGrant> { grant };
+
+                var token = new Token(
+                    twilioAccountSid,
+                    twilioApiKey,
+                    twilioApiSecret,
+                    identity: identity,
+                    grants: grants);
+
+                Console.WriteLine(token.ToJwt());
+
+                return token.ToJwt();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public async Task<IEnumerable<RoomDetails>> GetRooms()
+        {
+            var rooms = await RoomResource.ReadAsync();
+            var tasks = rooms.Select(
+                room => GetRoomDetailsAsync(
+                    room,
+                    ParticipantResource.ReadAsync(
+                        room.Sid,
+                        ParticipantStatus.Connected)));
+            //RoomDetails room = await httpHandler.GetRequest<RoomDetails>(apiUrl, AccessToken);
+
+
+            return await Task.WhenAll(tasks);
+
+            static async Task<RoomDetails> GetRoomDetailsAsync(
+                RoomResource room,
+                Task<ResourceSet<ParticipantResource>> participantTask)
+            {
+                var participants = await participantTask;
+
+                return new(
+                    room.Sid,
+                    room.UniqueName,
+                    participants.Count(),
+                    room.MaxParticipants ?? 0);
+            }
+
+        }
     }
 }

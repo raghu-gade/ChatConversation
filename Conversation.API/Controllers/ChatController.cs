@@ -62,6 +62,24 @@ namespace Conversation.API.Controllers
             //return Ok(result);
 
         }
+        [HttpGet("CreateVideoTokenWithRoom")]
+        public ActionResult CreateVideoTokenWithRoom(string name, string room)
+        {
+
+            var result = this.chatService.CreateVideoTokenWithRoom(name, room);
+            return Ok(Tuple.Create(result, "ok"));
+            //return Ok(result);
+
+        }
+
+        [HttpGet("rooms")]
+        public IEnumerable<RoomDetails> GetRooms()
+        {
+            var result = this.chatService.GetRooms();
+            return result;
+        }
+
+
         [HttpPost("SendNotificationByIdentity")]
         public ActionResult<SendNotificationByIdentity> SendNotificationByIdentity(NotificationsBody msgBody)
         {
@@ -69,6 +87,10 @@ namespace Conversation.API.Controllers
             return result;
 
         }
+
+
+
+
 
     }
 }

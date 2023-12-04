@@ -4,6 +4,7 @@ using Conversation.Services.MessageService;
 using ConversationAPI.DataAccess.EntityPlatform;
 using ConvertionEntities.Entities;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -37,6 +38,31 @@ namespace Conversation.Services.Chat
             try
             {
                 return this.chatHandler.CreateVideoAccessToken(name);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public string CreateVideoTokenWithRoom(string name, string room)
+        {
+            try
+            {
+                return this.chatHandler.CreateVideoTokenWithRoom(name, room);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public IEnumerable<RoomDetails> GetRooms()
+        {
+            try
+            {
+
+                return this.chatHandler.GetRooms().Result;
             }
             catch (Exception ex)
             {

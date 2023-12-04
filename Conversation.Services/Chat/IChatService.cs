@@ -16,6 +16,9 @@ namespace Conversation.Services.Chat
         public MessageEntity GetMessagesByConversationId(string ConversationId);
         public SendNotificationByIdentity SendNotificationByIdentity(NotificationsBody msgBody);
         public string CreateVideoAccessToken(string name);
+        public string CreateVideoTokenWithRoom(string name, string room);
+        public IEnumerable<RoomDetails> GetRooms();
+
 
 
 
