@@ -19,10 +19,4 @@
     <ProjectReference Include="..\ConversationAPI.DataAccess\ConversationAPI.DataAccess.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="VAMLIbrary.Core">
-      <HintPath>..\..\..\VAMLibrary.Core.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
 </Project>

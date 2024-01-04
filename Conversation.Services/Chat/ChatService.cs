@@ -115,6 +115,17 @@ namespace Conversation.Services.Chat
                 throw ex;
             }
         }
+        public ConversationParticipant GetParticipantsByConversationSid(string ConversationId)
+        {
+            try
+            {
+                return this.chatHandler.GetParticipantsByConversationSid(ConversationId).Result;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
         public SendNotificationByIdentity SendNotificationByIdentity(NotificationsBody msgBody)
         {

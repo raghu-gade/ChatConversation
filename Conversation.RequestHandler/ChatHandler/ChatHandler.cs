@@ -24,7 +24,7 @@ namespace Conversation.RequestHandler.ChatHandler
     {
         public IConfiguration configuration { get; }
         private readonly IHttpHandler httpHandler;
-     
+        //public readonly TwilioSettings _twilioSettings;
 
 
         public ChatHandler(IConfiguration configurations, IHttpHandler httpHandler)
@@ -75,6 +75,15 @@ namespace Conversation.RequestHandler.ChatHandler
             string uri = configuration.GetValue<string>(MessageConstants.ConversationUrl);
             var apiUrl = uri + MessageConstants.Conversations + "/" + ConversationId + MessageConstants.Messages;
             MessageEntity chatEntity = await httpHandler.GetRequest<MessageEntity>(apiUrl, AccessToken);
+            return chatEntity;
+
+        }
+        public async Task<ConversationParticipant> GetParticipantsByConversationSid(string ConversationId)
+        {
+            string AccessToken = configuration.GetValue<string>(MessageConstants.AccountSid) + ":" + configuration.GetValue<string>(MessageConstants.AuthToken);
+            string uri = configuration.GetValue<string>(MessageConstants.ConversationUrl);
+            var apiUrl = uri + MessageConstants.Conversations + "/" + ConversationId + "/" + MessageConstants.Participants;
+            ConversationParticipant chatEntity = await httpHandler.GetRequest<ConversationParticipant>(apiUrl, AccessToken);
             return chatEntity;
 
         }

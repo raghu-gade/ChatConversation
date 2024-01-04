@@ -14,6 +14,7 @@ namespace Conversation.Services.Chat
         public ChatEntity FetchConversation(string MessageSid);
         public Conversations GetAllConversations();
         public MessageEntity GetMessagesByConversationId(string ConversationId);
+        public ConversationParticipant GetParticipantsByConversationSid(string ConversationSid);
         public SendNotificationByIdentity SendNotificationByIdentity(NotificationsBody msgBody);
         public string CreateVideoAccessToken(string name);
         public string CreateVideoTokenWithRoom(string name, string room);

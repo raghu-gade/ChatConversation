@@ -17,6 +17,7 @@ namespace Conversation.RequestHandler.ChatHandler
         Task<ChatEntity> FetchConversation(string ConversationSid);
         Task<Conversations> GetAllConversations();
         Task<MessageEntity> GetMessagesByConversationId(string ConversationId);
+        Task<ConversationParticipant> GetParticipantsByConversationSid(string ConversationSid);
         Task<SendNotificationByIdentity> SendNotificationByIdentity(NotificationsBody msgBody);
 
 

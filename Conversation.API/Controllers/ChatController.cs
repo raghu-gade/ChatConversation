@@ -42,6 +42,13 @@ namespace Conversation.API.Controllers
             var result = this.chatService.GetMessagesByConversationId(ConversationId);
             return result;
         }
+        [HttpGet("GetParticipantsByConversationSid")]
+        public ActionResult<ConversationParticipant> GetParticipantsByConversationSid(string ConversationId)
+        {
+
+            var result = this.chatService.GetParticipantsByConversationSid(ConversationId);
+            return result;
+        }
 
         [HttpGet]
         public ActionResult CreateChatAccessToken(string name)
