@@ -10,12 +10,16 @@ using System.Text;
 using System.Threading.Tasks;
 using Twilio.TwiML.Voice;
 
+
 namespace Conversation.RequestHandler.UserHandler
 {
-    public class UserHandler:IUserHandler
+    public class UserHandler : IUserHandler
     {
         public IConfiguration configuration { get; }
         private readonly IHttpHandler httpHandler;
+
+
+
         public UserHandler(IConfiguration configurations, IHttpHandler httpHandler)
         {
             this.configuration = configurations;
@@ -27,13 +31,7 @@ namespace Conversation.RequestHandler.UserHandler
             string uri = configuration.GetValue<string>(MessageConstants.ConversationUrl);
             var apiUrl = uri + MessageConstants.Users;
 
-
-
-            //var json = JsonConvert.SerializeObject(identity);
-            //var Tin = JsonConvert.DeserializeObject<UserEntity>(json);
-
-
-            UserCreationResponse chatEntity = await httpHandler.PostRequest<UserEntity, UserCreationResponse>(apiUrl, identity, AccessToken);
+            UserCreationResponse chatEntity = await httpHandler.PostFormUrlEncodedRequest<UserEntity, UserCreationResponse>(apiUrl, identity, AccessToken);
 
             return chatEntity;
         }
@@ -41,8 +39,8 @@ namespace Conversation.RequestHandler.UserHandler
         {
             string AccessToken = configuration.GetValue<string>(MessageConstants.AccountSid) + ":" + configuration.GetValue<string>(MessageConstants.AuthToken);
             string uri = configuration.GetValue<string>(MessageConstants.ConversationUrl);
-            var apiUrl = uri + MessageConstants.Users+"/"+id;        
-            
+            var apiUrl = uri + MessageConstants.Users + "/" + id;
+
             UserCreationResponse chatEntity = await httpHandler.GetRequest<UserCreationResponse>(apiUrl, AccessToken);
 
             return chatEntity;
@@ -61,7 +59,7 @@ namespace Conversation.RequestHandler.UserHandler
         {
             string AccessToken = configuration.GetValue<string>(MessageConstants.AccountSid) + ":" + configuration.GetValue<string>(MessageConstants.AuthToken);
             string uri = configuration.GetValue<string>(MessageConstants.ConversationUrl);
-            var apiUrl = uri + MessageConstants.Users + '/'+id;
+            var apiUrl = uri + MessageConstants.Users + '/' + id;
 
             var json = JsonConvert.SerializeObject(user);
             var Tin = JsonConvert.DeserializeObject<UpdateUserEntity>(json);

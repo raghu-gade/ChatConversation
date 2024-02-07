@@ -12,10 +12,11 @@ namespace RequestHandler
         Task<TOut> PostRequestForAllCreations<TIn, TOut>(string uri, Dictionary<string, string> content, string accessToken);
         Task<T> GetRequest<T>(string uri, string accessToken);
         Task<TOut> PostRequest<TIn, TOut>(string uri, TIn content, string accessToken);
+        Task<TOut> PostFormUrlEncodedRequest<TIn, TOut>(string uri, TIn content, string accessToken);
 
         //Task<TOut> PostRequestForCreateMessage<TIn, TOut>(string uri, CreateMessageTIn content, string accessToken);
         //Task<TOut> PostRequestForCall<TIn, TOut>(string uri, CallMaking content, string accessToken);
         //Task<TOut> PostRequestForCallRecord<TIn, TOut>(string uri, CallRecordEntity content, string accessToken);
-        Task<T> DeleteRequest<T>(string uri, string accessToken);        
+        Task<T> DeleteRequest<T>(string uri, string accessToken);
     }
 }

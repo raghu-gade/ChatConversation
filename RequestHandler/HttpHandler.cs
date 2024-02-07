@@ -41,7 +41,7 @@ namespace RequestHandler
 
                 client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
 
-              
+
                 using (HttpResponseMessage response = await client.PostAsync(uri, new FormUrlEncodedContent(keyValuePairs)))
                 {
                     string responseBody = await response.Content.ReadAsStringAsync();
@@ -188,13 +188,60 @@ namespace RequestHandler
             }
             catch (Exception ex)
             {
-                
+
                 throw ex;
             }
         }
 
-      
-        
+        public async Task<TOut> PostFormUrlEncodedRequest<TIn, TOut>(string uri, TIn content, string accessToken)
+        {
+            //FormUrlEncodedContent gg = new FormUrlEncodedContent(new Directory<string,string>(content));
+            try
+            {
+                var json = JsonConvert.SerializeObject(content);
+                var Tin = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
+
+
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(
+                    new MediaTypeWithQualityHeaderValue("application/json"));
+
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                var byteArray = Encoding.ASCII.GetBytes(accessToken);
+
+                client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
+
+                var serilize = new FormUrlEncodedContent(Tin);
+                //var serialized = new StringContent(content, Encoding.UTF8, "application/x-www-form-urlencoded");
+
+                using (HttpResponseMessage response = await client.PostAsync(uri, serilize))
+                {
+                    string responseBody = await response.Content.ReadAsStringAsync();
+                    if (response.StatusCode == HttpStatusCode.BadRequest)
+                    {
+                        return JsonConvert.DeserializeObject<TOut>(responseBody);
+                        throw new Exception(responseBody);
+                    }
+                    if (response.StatusCode == HttpStatusCode.FailedDependency)
+                    {
+
+                    }
+                    else if (response.StatusCode == HttpStatusCode.Unauthorized)
+                    {
+                        throw new Exception("UNAUTHORIZED");
+                    }
+                    // check if error exist before serialization
+                    return JsonConvert.DeserializeObject<TOut>(responseBody);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         /// <summary>
         /// Delete Api calls
         /// </summary>
@@ -234,134 +281,134 @@ namespace RequestHandler
 
 
         #region Need to Remove Origin Code
- //       public async Task<TOut> PostRequestForCreateMessage<TIn, TOut>(string uri, CreateMessageTIn createMessage, string accessToken)
- //       {
+        //       public async Task<TOut> PostRequestForCreateMessage<TIn, TOut>(string uri, CreateMessageTIn createMessage, string accessToken)
+        //       {
 
- //           try
- //           {
- //               client.DefaultRequestHeaders.Clear();
- //               client.DefaultRequestHeaders.Accept.Add(
- //                   new MediaTypeWithQualityHeaderValue("application/json"));
+        //           try
+        //           {
+        //               client.DefaultRequestHeaders.Clear();
+        //               client.DefaultRequestHeaders.Accept.Add(
+        //                   new MediaTypeWithQualityHeaderValue("application/json"));
 
- //               client.DefaultRequestHeaders.Accept.Clear();
- //               client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
- //               var byteArray = Encoding.ASCII.GetBytes(accessToken);
+        //               client.DefaultRequestHeaders.Accept.Clear();
+        //               client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+        //               var byteArray = Encoding.ASCII.GetBytes(accessToken);
 
- //               client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
+        //               client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
 
- //               using (HttpResponseMessage response = await client.PostAsync(uri, new FormUrlEncodedContent(new Dictionary<string, string>(){
- //{ "To", createMessage.to },
- //{ "From", createMessage.from },
- //{ "Body", createMessage.body } })))
- //               {
- //                   string responseBody = await response.Content.ReadAsStringAsync();
- //                   if (response.StatusCode == HttpStatusCode.BadRequest)
- //                   {
- //                       return JsonConvert.DeserializeObject<TOut>(responseBody);
- //                   }
- //                   if (response.StatusCode == HttpStatusCode.FailedDependency)
- //                   {
+        //               using (HttpResponseMessage response = await client.PostAsync(uri, new FormUrlEncodedContent(new Dictionary<string, string>(){
+        //{ "To", createMessage.to },
+        //{ "From", createMessage.from },
+        //{ "Body", createMessage.body } })))
+        //               {
+        //                   string responseBody = await response.Content.ReadAsStringAsync();
+        //                   if (response.StatusCode == HttpStatusCode.BadRequest)
+        //                   {
+        //                       return JsonConvert.DeserializeObject<TOut>(responseBody);
+        //                   }
+        //                   if (response.StatusCode == HttpStatusCode.FailedDependency)
+        //                   {
 
- //                   }
+        //                   }
 
- //                   else if (response.StatusCode == HttpStatusCode.Unauthorized)
- //                   {
- //                       throw new Exception("UNAUTHORIZED");
- //                   }
- //                   return JsonConvert.DeserializeObject<TOut>(responseBody);
- //               }
- //           }
- //           catch (Exception ex)
- //           {
- //               throw ex;
- //           }
- //       }
- //       public async Task<TOut> PostRequestForCall<TIn, TOut>(string uri, CallMaking callMaking, string accessToken)
- //       {
+        //                   else if (response.StatusCode == HttpStatusCode.Unauthorized)
+        //                   {
+        //                       throw new Exception("UNAUTHORIZED");
+        //                   }
+        //                   return JsonConvert.DeserializeObject<TOut>(responseBody);
+        //               }
+        //           }
+        //           catch (Exception ex)
+        //           {
+        //               throw ex;
+        //           }
+        //       }
+        //       public async Task<TOut> PostRequestForCall<TIn, TOut>(string uri, CallMaking callMaking, string accessToken)
+        //       {
 
- //           try
- //           {
- //               client.DefaultRequestHeaders.Clear();
- //               client.DefaultRequestHeaders.Accept.Add(
- //                   new MediaTypeWithQualityHeaderValue("application/json"));
+        //           try
+        //           {
+        //               client.DefaultRequestHeaders.Clear();
+        //               client.DefaultRequestHeaders.Accept.Add(
+        //                   new MediaTypeWithQualityHeaderValue("application/json"));
 
- //               client.DefaultRequestHeaders.Accept.Clear();
- //               client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
- //               var byteArray = Encoding.ASCII.GetBytes(accessToken);
+        //               client.DefaultRequestHeaders.Accept.Clear();
+        //               client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+        //               var byteArray = Encoding.ASCII.GetBytes(accessToken);
 
- //               client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
+        //               client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
 
- //               using (HttpResponseMessage response = await client.PostAsync(uri, new FormUrlEncodedContent(new Dictionary<string, string>(){
- //{ "To", callMaking.to },
- //{ "From", callMaking.from },
- //{ "Twiml", callMaking.twiml },//"Twiml" is Optional or May not Required
- //{ "ApplicationSid", callMaking.applicationSid },
- //{ "Url", callMaking.url } })))//"Url" is Optional or May not Required
- //               {
- //                   string responseBody = await response.Content.ReadAsStringAsync();
- //                   if (response.StatusCode == HttpStatusCode.BadRequest)
- //                   {
- //                       return JsonConvert.DeserializeObject<TOut>(responseBody);
- //                   }
- //                   if (response.StatusCode == HttpStatusCode.FailedDependency)
- //                   {
+        //               using (HttpResponseMessage response = await client.PostAsync(uri, new FormUrlEncodedContent(new Dictionary<string, string>(){
+        //{ "To", callMaking.to },
+        //{ "From", callMaking.from },
+        //{ "Twiml", callMaking.twiml },//"Twiml" is Optional or May not Required
+        //{ "ApplicationSid", callMaking.applicationSid },
+        //{ "Url", callMaking.url } })))//"Url" is Optional or May not Required
+        //               {
+        //                   string responseBody = await response.Content.ReadAsStringAsync();
+        //                   if (response.StatusCode == HttpStatusCode.BadRequest)
+        //                   {
+        //                       return JsonConvert.DeserializeObject<TOut>(responseBody);
+        //                   }
+        //                   if (response.StatusCode == HttpStatusCode.FailedDependency)
+        //                   {
 
- //                   }
+        //                   }
 
- //                   else if (response.StatusCode == HttpStatusCode.Unauthorized)
- //                   {
- //                       throw new Exception("UNAUTHORIZED");
- //                   }
- //                   return JsonConvert.DeserializeObject<TOut>(responseBody);
- //               }
- //           }
- //           catch (Exception ex)
- //           {
- //               throw ex;
- //           }
- //       }
- //       public async Task<TOut> PostRequestForCallRecord<TIn, TOut>(string uri, CallRecordEntity callRecord, string accessToken)
- //       {
+        //                   else if (response.StatusCode == HttpStatusCode.Unauthorized)
+        //                   {
+        //                       throw new Exception("UNAUTHORIZED");
+        //                   }
+        //                   return JsonConvert.DeserializeObject<TOut>(responseBody);
+        //               }
+        //           }
+        //           catch (Exception ex)
+        //           {
+        //               throw ex;
+        //           }
+        //       }
+        //       public async Task<TOut> PostRequestForCallRecord<TIn, TOut>(string uri, CallRecordEntity callRecord, string accessToken)
+        //       {
 
- //           try
- //           {
- //               client.DefaultRequestHeaders.Clear();
- //               client.DefaultRequestHeaders.Accept.Add(
- //                   new MediaTypeWithQualityHeaderValue("application/json"));
+        //           try
+        //           {
+        //               client.DefaultRequestHeaders.Clear();
+        //               client.DefaultRequestHeaders.Accept.Add(
+        //                   new MediaTypeWithQualityHeaderValue("application/json"));
 
- //               client.DefaultRequestHeaders.Accept.Clear();
- //               client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
- //               var byteArray = Encoding.ASCII.GetBytes(accessToken);
+        //               client.DefaultRequestHeaders.Accept.Clear();
+        //               client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+        //               var byteArray = Encoding.ASCII.GetBytes(accessToken);
 
- //               client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
+        //               client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
 
- //               using (HttpResponseMessage response = await client.PostAsync(uri, new FormUrlEncodedContent(new Dictionary<string, string>(){
- //{ "To", callRecord.CallSid },
- //{ "From", callRecord.AcountSid },
- // })))
- //               {
- //                   string responseBody = await response.Content.ReadAsStringAsync();
- //                   if (response.StatusCode == HttpStatusCode.BadRequest)
- //                   {
- //                       return JsonConvert.DeserializeObject<TOut>(responseBody);
- //                   }
- //                   if (response.StatusCode == HttpStatusCode.FailedDependency)
- //                   {
+        //               using (HttpResponseMessage response = await client.PostAsync(uri, new FormUrlEncodedContent(new Dictionary<string, string>(){
+        //{ "To", callRecord.CallSid },
+        //{ "From", callRecord.AcountSid },
+        // })))
+        //               {
+        //                   string responseBody = await response.Content.ReadAsStringAsync();
+        //                   if (response.StatusCode == HttpStatusCode.BadRequest)
+        //                   {
+        //                       return JsonConvert.DeserializeObject<TOut>(responseBody);
+        //                   }
+        //                   if (response.StatusCode == HttpStatusCode.FailedDependency)
+        //                   {
 
- //                   }
+        //                   }
 
- //                   else if (response.StatusCode == HttpStatusCode.Unauthorized)
- //                   {
- //                       throw new Exception("UNAUTHORIZED");
- //                   }
- //                   return JsonConvert.DeserializeObject<TOut>(responseBody);
- //               }
- //           }
- //           catch (Exception ex)
- //           {
- //               throw ex;
- //           }
- //       }
+        //                   else if (response.StatusCode == HttpStatusCode.Unauthorized)
+        //                   {
+        //                       throw new Exception("UNAUTHORIZED");
+        //                   }
+        //                   return JsonConvert.DeserializeObject<TOut>(responseBody);
+        //               }
+        //           }
+        //           catch (Exception ex)
+        //           {
+        //               throw ex;
+        //           }
+        //       }
         #endregion
     }
-    }
+}
